@@ -14,14 +14,14 @@ const Header = () => {
                 <nav className='md:flex gap-10 items-center hidden'>
                     <ul className='text-white flex gap-8'>
                         <Link href={'/'}>Home</Link>
-                        <Link href={'/'}>Stadium</Link>
+                        <Link href={'/stadium'}>Stadium</Link>
                         <Link href={'/play'}>Play</Link>
                         <Link href={'/social'}>Social</Link>
-                        <Link href={'/'}>Store</Link>
-                        <Link href={'/'}>Events</Link>
-                        <Link href={'/'}>Ads</Link>
+                        <Link href={'/store'}>Store</Link>
+                        <Link href={'/events'}>Events</Link>
+                        <Link href={'/ads'}>Ads</Link>
                         <Link href={'/wallet'}>Wallet</Link>
-                        <Link href={'/'}>Search</Link>
+                        <Link href={'/search'}>Search</Link>
                     </ul>
                     <Link href={'/profile'}>
                         <Avatar>

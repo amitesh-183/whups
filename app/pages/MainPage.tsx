@@ -1,6 +1,5 @@
-import FeatureCard from '@/components/FeatureCard'
+import FeatureCard from '@/components/Cards/FeatureCard'
 import ThemeButton from '@/components/ThemeButton'
-import { Button } from '@/components/ui/button'
 import React from 'react'
 
 const MainPage = () => {

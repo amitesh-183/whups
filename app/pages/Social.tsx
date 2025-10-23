@@ -26,7 +26,6 @@ const creators = [
     },
 ];
 
-
 const Social = () => {
     return (
         <>
@@ -445,25 +444,6 @@ const Social = () => {
                         </div>
                     </div>
                 </div>
-                {/* <section className='flex gap-4 px-10 py-8'>
-                    <aside>
-                        <div className='bg-[#03006040] border border-[#A4A0A0] px-4 py-4 w-[320px] h-[600px] rounded-2xl'>
-                            <div className='flex items-center justify-center mt-3'>
-                                <Image src={'/social/logo.svg'} height={70} width={70} alt='whuups' />
-                            </div>
-                            <ul>
-                                <li><Image src={'/social/logo.svg'} height={70} width={70} alt='whuups' /> Feed</li>
-                                <li><Image src={'/social/logo.svg'} height={70} width={70} alt='whuups' /> Feed</li>
-                                <li><Image src={'/social/logo.svg'} height={70} width={70} alt='whuups' /> Feed</li>
-                                <li><Image src={'/social/logo.svg'} height={70} width={70} alt='whuups' /> Feed</li>
-                                <li><Image src={'/social/logo.svg'} height={70} width={70} alt='whuups' /> Feed</li>
-                            </ul>
-                        </div>
-                    </aside>
-                    <div>
-
-                    </div>
-                </section> */}
             </main>
             <Footer />
         </>

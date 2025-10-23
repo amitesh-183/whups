@@ -147,6 +147,18 @@ body {
   text-fill-color: transparent;
 }
 
+.text-border-2 {
+  /* -webkit-text-stroke: 1px #ffffff; border color */
+  color: transparent; /* keeps only the stroke visible */
+  /* Step into the Digital Stadium */
+  /* page heading */
+  background: linear-gradient(90deg, #ffffff 0%, #ffff96 49.52%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
 .text-border-login {
   -webkit-text-stroke: 1px #ffffff; /* border color */
   color: transparent; /* keeps only the stroke visible */
@@ -157,4 +169,14 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+.active-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(169, 0, 93, 0.8) 0%,
+    rgba(0, 152, 198, 0.8) 100%
+  );
+  border: 1px solid #a4a0a0;
+  border-radius: 20px;
 }
