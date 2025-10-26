@@ -186,34 +186,36 @@ const Cart = () => {
                                     </div>
                                 </Label>
                             </div>
-                            <div className='bg-[#03006040] p-6 rounded-2xl flex gap-4'>
-                                <div className='flex items-center gap-4'>
-                                    <Image src={'/cart/metamask.png'} height={30} width={30} alt='metamask' />
-                                    <p>MetaMask</p>
+                            <div className='md:hidden flex flex-col items-center gap-4'>
+                                <div className='bg-[#03006040] p-6 rounded-2xl w-full flex gap-4'>
+                                    <div className='flex items-center gap-4'>
+                                        <Image src={'/cart/metamask.png'} height={30} width={30} alt='metamask' />
+                                        <p>MetaMask</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='bg-[#03006040] p-6 rounded-2xl flex gap-4'>
-                                <div className='flex items-center gap-4'>
-                                    <Image src={'/cart/coinbase.svg'} height={30} width={30} alt='metamask' />
-                                    <p>Coinbase Wallet</p>
+                                <div className='bg-[#03006040] p-6 rounded-2xl w-full flex gap-4'>
+                                    <div className='flex items-center gap-4'>
+                                        <Image src={'/cart/coinbase.svg'} height={30} width={30} alt='metamask' />
+                                        <p>Coinbase Wallet</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='bg-[#03006040] p-6 rounded-2xl flex gap-4'>
-                                <div className='flex items-center gap-4'>
-                                    <Image src={'/cart/base.svg'} height={30} width={30} alt='metamask' />
-                                    <p>Base</p>
+                                <div className='bg-[#03006040] p-6 rounded-2xl w-full flex gap-4'>
+                                    <div className='flex items-center gap-4'>
+                                        <Image src={'/cart/base.svg'} height={30} width={30} alt='metamask' />
+                                        <p>Base</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='bg-[#03006040] p-6 rounded-2xl flex gap-4 justify-between'>
-                                <div className='flex items-center gap-4'>
-                                    <WalletCards />
-                                    <p>Other wallets</p>
+                                <div className='bg-[#03006040] p-6 rounded-2xl w-full flex gap-4 justify-between'>
+                                    <div className='flex items-center gap-4'>
+                                        <WalletCards />
+                                        <p>Other wallets</p>
+                                    </div>
+                                    <ChevronRight />
                                 </div>
-                                <ChevronRight />
-                            </div>
-                            <div className='flex justify-center flex-col items-center my-6'>
-                                <p className='text-gray-400'>I have a passkey</p>
-                                <div className='flex items-center gap-2 text-gray-500'>Protected by <p className='w-3 h-3 rounded-full bg-gray-800'></p> privy</div>
+                                <div className='flex justify-center flex-col items-center my-6'>
+                                    <p className='text-gray-400'>I have a passkey</p>
+                                    <div className='flex items-center gap-2 text-gray-500'>Protected by <p className='w-3 h-3 rounded-full bg-gray-800'></p> privy</div>
+                                </div>
                             </div>
                         </div>
                     </div>

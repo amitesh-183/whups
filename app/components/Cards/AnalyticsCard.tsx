@@ -19,11 +19,11 @@ const AnalyticsCard = ({ imageUrl, title, date, views, clicks, whu, action }: An
     return (
         <>
             <div className='w-fit'>
-                <GradientBorderCard borderStyles='' outerStyles='relative mt-10 w-fit bg-none border group group-hover:border-transparent p-1 border border-[#A4A0A0] bg-none hover:bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500] duration-300 ease-in-out transition-all cursor-pointer '>
+                <GradientBorderCard borderStyles='' outerStyles='relative w-fit bg-none border group group-hover:border-transparent p-1 border border-[#A4A0A0] bg-none hover:bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500] duration-300 ease-in-out transition-all cursor-pointer '>
                     <div className=''>
-                        <Image src={imageUrl} height={100} width={100} alt='Image' className='w-[280px] h-[350px] rounded-2xl object-fill' />
+                        <Image src={imageUrl} height={100} width={100} alt='Image' className='w-[280px] md:h-[350px] h-[260px] rounded-2xl object-fill' />
                     </div>
-                    <div className='absolute bottom-0 left-0 w-full h-[38%] backdrop-blur-[1px] bg-blue-800/10 rounded-2xl p-4 px-8 group-hover:text-[#02FFFF]'>
+                    <div className='absolute bottom-0 left-0 w-full md:h-[38%] backdrop-blur-[1px] bg-blue-800/10 rounded-2xl md:p-4 py-4 px-2 md:px-8 group-hover:text-[#02FFFF]'>
                         <div className='flex justify-between items-center'>
                             <h4 className='text-sm font-semibold'>{title}</h4>
                             <p className='text-xs'>{date}</p>

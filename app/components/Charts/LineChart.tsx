@@ -44,7 +44,7 @@ const chartConfig = {
 
 const LineChart = () => {
     return (
-        <Card className="bg-transparent w-fit mx-auto">
+        <Card className="bg-transparent w-fit mx-auto md:border border-0">
             <CardHeader>
                 {/* <CardTitle>Area Chart - Gradient</CardTitle>
                 <CardDescription>
@@ -52,7 +52,7 @@ const LineChart = () => {
                 </CardDescription> */}
             </CardHeader>
             <CardContent className="h-[300px]">
-                <ChartContainer config={chartConfig} className="h-[300px]">
+                <ChartContainer config={chartConfig} className="md:h-[300px] h-[280px] md:w-auto w-[300px]">
                     <AreaChart
                         accessibilityLayer
                         data={chartData}
