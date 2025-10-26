@@ -11,7 +11,7 @@ const HomePage = () => {
     return (
         <>
             <Header />
-            <main className='pt-6 px-4'>
+            <main className='pt-6 md:px-0 px-4'>
                 {/* <!-- Hero Section --> */}
                 <section className="md:px-12 relative ">
                     <div className='flex flex-col items-center justify-center'>

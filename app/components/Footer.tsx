@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <>
             {/* footer */}
-            <footer className='bg-black px-4'>
+            <footer className='bg-black'>
                 <div className='relative md:mt-20 mt-16'>
                     <Image src={"./home/footer-color.svg"} height={200} width={200} alt='Whuups' className='w-full h-full absolute z-10 md:block hidden' />
                     <Image src={"./home/footer-black.svg"} height={200} width={200} alt='Whuups' className='w-full h-full -translate-y-8 md:block hidden' />

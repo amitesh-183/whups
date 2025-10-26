@@ -1,13 +1,25 @@
 'use client'
+import BorderCard from '@/components/Cards/BorderCard'
 import GradientBorderCard from '@/components/Cards/GradientBorderCard'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import ThemeButton from '@/components/ThemeButton'
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
-import { ArrowLeft } from 'lucide-react'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Label } from '@/components/ui/label'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+
+// import required modules
+import { FreeMode, Pagination } from 'swiper/modules';
 
 
 const events = [
@@ -49,9 +61,77 @@ const events = [
     }
 ]
 
+const tickets = [
+    {
+        id: 0,
+        name: "🎟️General (Free)",
+        tokens: "",
+        whu: 0,
+        image: "/profile/general-pass.jpg",
+        description: "Access to event stream with community chat",
+    },
+    {
+        id: 1,
+        name: "🌟VIP Lounge (NFT)",
+        tokens: "Not enough tokens",
+        whu: 200,
+        image: "/events/vip.jpg",
+        description: "Exclusive lounge  + premium seats + perks",
+    },
+    {
+        id: 2,
+        name: "👑Ultra VIP Meet",
+        tokens: "Not enough tokens",
+        whu: 200,
+        image: "/events/ultra-vip.jpg",
+        description: "Meet creators + collectibles + early acces",
+    }
+]
+
+const trending = [
+    {
+        id: 0,
+        name: "Championship Final",
+        image: "/profile/general-pass.jpg",
+        description: "Access to event stream with community chat",
+    },
+    {
+        id: 1,
+        name: "Championship Final",
+        tokens: "Not enough tokens",
+        whu: 200,
+        image: "/events/vip.jpg",
+        description: "Exclusive lounge  + premium seats + perks",
+    },
+    {
+        id: 2,
+        name: "Championship Final",
+        tokens: "Not enough tokens",
+        whu: 200,
+        image: "/events/ultra-vip.jpg",
+        description: "Meet creators + collectibles + early acces",
+    },
+    {
+        id: 3,
+        name: "Championship Final",
+        tokens: "Not enough tokens",
+        whu: 200,
+        image: "/events/ultra-vip.jpg",
+        description: "Meet creators + collectibles + early acces",
+    },
+    {
+        id: 4,
+        name: "Championship Final",
+        tokens: "Not enough tokens",
+        whu: 200,
+        image: "/events/ultra-vip.jpg",
+        description: "Meet creators + collectibles + early acces",
+    }
+]
+
 const Event = () => {
-    const [isReminder, setIsReminder] = React.useState(false);
-    const [isHome, setIsHome] = React.useState(true);
+    const [currentStep, setCurrentStep] = React.useState(0);
+    const [isReminder, setIsReminder] = React.useState(false)
     const [date, setDate] = React.useState<Date | undefined>(new Date())
     const [eventReminder, setEventReminder] = React.useState([
         {
@@ -70,10 +150,28 @@ const Event = () => {
             time: 12,
         }
     ])
-    return (
-        <>
-            <Header />
-            {isReminder && (
+
+    const steps = [
+        { id: 0, label: "Home" },
+        { id: 1, label: "Ticket" },
+        { id: 2, label: "Payment" },
+        { id: 3, label: "Success" },
+    ];
+
+    const handleNext = () => {
+        if (currentStep < steps.length) setCurrentStep(currentStep + 1)
+    }
+
+    const handleBack = () => {
+        if (currentStep > 0) setCurrentStep(currentStep - 1)
+    }
+
+
+    if (isReminder) {
+        return (
+
+            <>
+                <Header />
                 <main className=' my-20'>
                     <GradientBorderCard outerStyles='w-[70%] mx-auto bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
                         <div className='bg-[#020617] rounded-2xl py-8 px-16 min-h-[300px]'>
@@ -121,7 +219,7 @@ const Event = () => {
                         <Button
                             onClick={() => {
                                 setIsReminder(false)
-                                setIsHome(true)
+                                setCurrentStep(0)
                             }}
                             className="text-[#02FFFF] cursor-pointer hover:underline bg-none bg-transparent flex items-center gap-2"
                         >
@@ -129,8 +227,14 @@ const Event = () => {
                         </Button>
                     </div>
                 </main>
-            )}
-            {isHome &&
+                <Footer />
+            </>)
+    }
+
+    return (
+        <>
+            <Header />
+            {currentStep === 0 &&
                 <main>
                     <section>
                         <div className='flex justify-center mt-16'>
@@ -145,7 +249,7 @@ const Event = () => {
                                         <h4 className='text-2xl md:text-5xl text-border-2 hero-font mt-2'>Championship Final</h4>
                                         <p className='font-semiboldtext-md md:text-xl text-[#00FFEA] py-4 w-[60%] mx-auto'>Don't miss the ultimate showdown  with VIP lounges , exclusive content , and unforgettable experiences.</p>
                                         <div className='flex items-center gap-6 justify-center'>
-                                            <Button className='font-semibold cursor-pointer rounded-2xl bg-gradient-to-r from-[#0022FF] to-[#FF008C] border-0 h-[52px] w-[170px] md:w-[300px] '><Image src={'/profile/ticket.svg'} height={28} width={28} alt='wallet' /> Get Tickets Now</Button>
+                                            <Button onClick={handleNext} className='font-semibold cursor-pointer rounded-2xl bg-gradient-to-r from-[#0022FF] to-[#FF008C] border-0 h-[52px] w-[170px] md:w-[300px] '><Image src={'/profile/ticket.svg'} height={28} width={28} alt='wallet' /> Get Tickets Now</Button>
                                         </div>
                                     </div>
                                     <div className='bg-[url(/events/hero.jpg)] h-[440px] bg-center w-full bg-cover rounded-3xl'></div>
@@ -156,10 +260,40 @@ const Event = () => {
                             <ThemeButton
                                 onClick={() => {
                                     setIsReminder(!isReminder)
-                                    setIsHome(false)
                                 }}
                                 btnStyle='mt-4 border-none w-fit px-8 h-12 from-[#0022FF] to-[#0022FF]' title='View Reminders' />
                         </div>
+                    </section>
+                    <section className='max-w-7xl mx-auto my-10'>
+                        <div>
+                            <h4 className='text-3xl font-bold py-4'>Trending Now 🔥</h4>
+                        </div>
+                        <Swiper
+                            slidesPerView={3}
+                            spaceBetween={20}
+                            freeMode={true}
+                            // pagination={{
+                            //     clickable: true,
+                            // }}
+                            modules={[FreeMode, Pagination]}
+                            className="mySwiper"
+                        >
+                            {trending.map((ticket, index) => (
+                                <SwiperSlide key={index} className='!p-0 !w-fit'>
+                                    <BorderCard cardStyles='w-fit !p-0 '>
+                                        <div>
+                                            <Image src={ticket.image} height={200} width={300} alt='wallet' className='object-cover h-[160px] rounded-t-2xl' />
+                                            <div className='px-6 py-4'>
+                                                <h6 className='text-2xl font-semibold text-center'>{ticket.name}</h6>
+                                                <div className='flex justify-center'>
+                                                    <ThemeButton btnStyle='mt-4 border-[#02FFFF] px-8 h-12 bg-transparent bg-none' title='View Event' />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </BorderCard>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </section>
                     <section className='py-20'>
                         <h3 className='text-3xl font-bold text-center py-4'>🚀 Upcoming Events</h3>
@@ -188,6 +322,115 @@ const Event = () => {
                     </section>
                 </main>
             }
+            {currentStep === 1 && (
+                <main className='my-20 max-w-7xl mx-auto'>
+                    <div>
+                        <h4 className='text-3xl font-bold text-center'>🎟️ Ticket for eSports Live Event</h4>
+                    </div>
+                    <div className='flex justify-end'>
+                        <ThemeButton btnStyle='mt-4 border-[#02FFFF] px-8 h-14 w-[400px] from-[#000] to-[#000]' title='200 WHU' />
+                    </div>
+                    <GradientBorderCard outerStyles='bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500] mt-10'>
+                        <div className='rounded-2xl bg-[#020617] px-16 py-8'>
+                            <div className='flex flex-col justify-center items-center'>
+                                <h4 className='text-2xl font-semibold'>eSports Live Event</h4>
+                                <p className='py-3'>22/11/25  ,  19:00:00   - Join thousands of fan in our virtual stadium.</p>
+                            </div>
+                            <div className='flex justify-center gap-4'>
+                                {tickets.map((ticket, index) => (
+                                    <BorderCard key={index} cardStyles='w-fit !p-0 '>
+                                        <div>
+                                            <Image src={ticket.image} height={200} width={300} alt='wallet' className='object-cover h-[160px] rounded-t-2xl' />
+                                            <div className='px-6 py-4'>
+                                                <h6 className='text-2xl font-semibold'>{ticket.name}</h6>
+                                                <p className='w-60 mt-2'>{ticket.description}</p>
+                                                <p className={`${ticket.whu === 0 ? "hidden" : ""} text-sm text-[#FFA600]`}>{ticket.whu} WHU</p>
+                                                <p className={`${ticket.whu === 0 ? "hidden" : ""} text-sm text-[#FA1500]`}>{ticket.tokens}</p>
+                                            </div>
+                                        </div>
+                                    </BorderCard>
+                                ))}
+                            </div>
+                            <div className=' p-6 flex flex-col justify-between items-center gap-2'>
+                                <Button
+                                    onClick={handleNext}
+                                    className="w-[300px] cursor-pointer bg-gradient-to-r from-[#FF00C7] to-[#0022FF] rounded-xl px-8 py-6 text-white font-semibold"
+                                >
+                                    Continue
+                                </Button>
+                                <Button
+                                    onClick={handleBack}
+                                    className="text-[#02FFFF] hover:underline bg-none bg-transparent flex items-center gap-2"
+                                >
+                                    <ArrowLeft /> Back to Events
+                                </Button>
+                            </div>
+                        </div>
+                    </GradientBorderCard>
+                </main>
+            )}
+            {currentStep === 2 && (
+                <main className='max-w-5xl mx-auto'>
+                    <GradientBorderCard outerStyles='bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                        <div className='bg-[#020617] rounded-2xl px-16 py-8'>
+                            <div className='flex flex-col gap-3'>
+                                <h4 className='text-xl font-bold mb-2'>💳 Payment Method</h4>
+                                <div className='bg-[#03006040] p-6 rounded-2xl flex gap-4'>
+                                    <Label className="flex items-start justify-center gap-3 rounded-lg p-3">
+                                        <Checkbox
+                                            id="toggle-2"
+                                            className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white dark:data-[state=checked]:border-blue-700 dark:data-[state=checked]:bg-blue-700 mr-4 mt-3"
+                                        />
+                                        <div className="grid gap-1.5 font-normal">
+                                            <p className="leading-none text-lg font-semibold flex items-center gap-2">
+                                                🌐 Crypto (WalletConnect) <Image src={'/cart/metamask.png'} height={30} width={30} alt='metamask' />
+                                            </p>
+                                            <p className="text-[#D9D9D9] text-sm pr-40">
+                                                Connect your wallet (e.g. MetaMask) with WalletConnect and pay using WHU tokens or
+                                                other supported cryptocurrencies.
+                                            </p>
+                                        </div>
+                                    </Label>
+                                </div>
+                            </div>
+                        </div>
+                    </GradientBorderCard>
+                    <div className=' p-6 flex justify-between items-center'>
+                        <Button
+                            onClick={handleBack}
+                            className="text-[#02FFFF] hover:underline bg-none bg-transparent flex items-center gap-2"
+                        >
+                            <ArrowLeft /> Back
+                        </Button>
+                        <Button
+                            onClick={handleNext}
+                            className="w-[300px] cursor-pointer bg-gradient-to-r from-[#FF00C7] to-[#0022FF] rounded-xl px-8 py-6 text-white font-semibold"
+                        >
+                            Proceed to payment <ArrowRight />
+                        </Button>
+                    </div>
+                </main>
+            )}
+            {currentStep === 3 && (
+                <main className='my-20'>
+                    <div className="relative md:mt-20 mt-16 rounded-2xl p-[0.8px] h-[280px] w-[40%] mx-auto bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] shadow-lg">
+                        <div className="absolute -inset-2 z-0 rounded-lg bg-gradient-to-r from-[#C400F5] to-[#02FFFF] opacity-50 blur-[50px]" />
+                        <div className="relative rounded-2xl bg-[#000000] p-20 flex flex-col justify-center items-center h-full">
+                            <h5 className='font-bold text-xl md:text-3xl mt-8 text-[#00D35F]'>✅ Thank You!</h5>
+                            <h5 className='py-6 text-center px-8'>Your ticket has been confirmed. A reminder has been
+                                added to your events list.</h5>
+                            <div className='mb-8 flex justify-center'>
+                                <Button
+                                    onClick={handleBack}
+                                    className="text-[#02FFFF] cursor-pointer hover:underline bg-none bg-transparent flex items-center gap-2"
+                                >
+                                    <ArrowLeft /> Back to Events
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            )}
             <Footer />
         </>
     )

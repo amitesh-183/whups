@@ -121,13 +121,13 @@ const Ads = () => {
                 :
                 <div className='max-w-5xl mx-auto flex flex-col items-center'>
                     <div className='flex justify-center flex-col items-center mt-20'>
-                        <Image src={'/ads/ads-manager.png'} height={540} width={540} alt='ads' />
+                        <Image src={'/ads/ads-manager.png'} height={540} width={540} alt='ads' className='md:w-[540px] w-[260px]' />
                     </div>
                     {choosePlacements ?
                         (
                             <>
                                 {/* Step Navigation */}
-                                <div>
+                                <div className='md:block hidden'>
                                     <ul className="flex gap-6 justify-center mt-10 flex-wrap mx-auto">
                                         {steps.map((step, index) => {
                                             const isCompleted = index < activeStep
@@ -153,7 +153,7 @@ const Ads = () => {
                                 </div>
 
                                 {/* Slider */}
-                                <div className="w-full mt-10 px-10">
+                                <div className="w-full mt-10 px-10 md:block hidden">
                                     <SliderProgress
                                         value={[progress]}
                                         max={100}
@@ -163,53 +163,51 @@ const Ads = () => {
                                 </div>
 
                                 {/* Step Content */}
-                                <BorderCard cardStyles="mt-20 h-full px-16 py-10 w-full">
-                                    <h3 className={`text-[#FFF799] font-bold text-2xl pt-6 ${activeStep === 3 ? 'text-center' : activeStep === 4 ? 'hidden' : ''}`}>
+                                <BorderCard cardStyles="md:mt-20 mt-10 h-full md:px-16 md:py-10 py-4 md:w-full w-[94%] mx-auto">
+                                    <h3 className={`text-[#FFF799] font-bold text-2xl pt-6 text-center md:text-start ${activeStep === 3 ? 'text-center' : activeStep === 4 ? 'hidden' : ''}`}>
                                         {steps[activeStep].title}
                                     </h3>
 
                                     {/* Dynamic Step Content */}
                                     {activeStep === 0 && (
                                         <div>
-                                            <p className="text-sm">
+                                            <p className="text-sm md:text-start text-center">
                                                 Select where your ad will appear in the metaverse stadium:
                                             </p>
-                                            <div className="grid grid-cols-2 gap-6 mt-8">
-                                                <GradientBorderCard borderStyles='px-6 py-10' outerStyles='bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
-                                                    <div className='flex flex-col' onClick={() => setChoosePlacements(true)}>
+                                            <div className="grid md:grid-cols-2 gap-6 mt-8">
+                                                <GradientBorderCard borderStyles='w-full h-full broder group-hover:border-transparent' outerStyles=' group group-hover:bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                                                    <div className='flex flex-col border group-hover:border-transparent bg-[#020617] group-hover:bg-gradient-to-br from-pink-800 to-blue-800 px-6 md:py-10 py-6 rounded-2xl'>
                                                         <h4 className='py-2 font-bold text-xl text-[#FFEF3F]'>
                                                             🏟️ Fieldside Banners
                                                         </h4>
-                                                        <p>Prime visibility right along the pitch, ensuring
+                                                        <p className='md:block hidden'>Prime visibility right along the pitch, ensuring
                                                             your brand is constantly in view during gameplay.</p>
                                                     </div>
                                                 </GradientBorderCard>
-                                                <BorderCard cardStyles='px-6 py-10' children={
-                                                    <div className='flex flex-col'>
-
+                                                <GradientBorderCard borderStyles='w-full h-full broder group-hover:border-transparent' outerStyles=' group group-hover:bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                                                    <div className='flex flex-col border group-hover:border-transparent bg-[#020617] group-hover:bg-gradient-to-br from-pink-800 to-blue-800 px-6 md:py-10 py-6 rounded-2xl'>
                                                         <h4 className='py-2 font-bold text-xl'>
                                                             🎥 Concourse Screens
                                                         </h4>
-                                                        <p>Catch fans attention as they move around the stadium with dynamic, eye-level digital ads.</p>
+                                                        <p className='md:block hidden'>Catch fans attention as they move around the stadium with dynamic, eye-level digital ads.</p>
                                                     </div>
-                                                } />
-                                                <BorderCard cardStyles='px-6 py-10' children={
-                                                    <div className='flex flex-col'>
-
+                                                </GradientBorderCard>
+                                                <GradientBorderCard borderStyles='w-full h-full broder group-hover:border-transparent' outerStyles=' group group-hover:bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                                                    <div className='flex flex-col border group-hover:border-transparent bg-[#020617] group-hover:bg-gradient-to-br from-pink-800 to-blue-800 px-6 md:py-10 py-6 rounded-2xl'>
                                                         <h4 className='py-2 font-bold text-xl'>
                                                             📢 Jumbotrons
                                                         </h4>
-                                                        <p>Massive impact with ads displayed on giant screens, visible to the entire stadium audience.</p>
+                                                        <p className='md:block hidden'>Massive impact with ads displayed on giant screens, visible to the entire stadium audience.</p>
                                                     </div>
-                                                } />
-                                                <BorderCard cardStyles='px-6 py-10' children={
-                                                    <div className='flex flex-col'>
+                                                </GradientBorderCard>
+                                                <GradientBorderCard borderStyles='w-full h-full broder group-hover:border-transparent' outerStyles=' group group-hover:bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                                                    <div className='flex flex-col border group-hover:border-transparent bg-[#020617] group-hover:bg-gradient-to-br from-pink-800 to-blue-800 px-6 md:py-10 py-6 rounded-2xl'>
                                                         <h4 className='py-2 font-bold text-xl'>
                                                             🚪 Entrance Arches
                                                         </h4>
-                                                        <p>First impression branding — greet fans as they enter the stadium with high-impact visuals.</p>
+                                                        <p className='md:block hidden'>First impression branding — greet fans as they enter the stadium with high-impact visuals.</p>
                                                     </div>
-                                                } />
+                                                </GradientBorderCard>
                                             </div>
                                         </div>
                                     )}
@@ -316,61 +314,60 @@ const Ads = () => {
                         (
                             <>
                                 <div className='text-center'>
-                                    <h4 className='text-3xl text-[#FFF799] mt-24 my-6 font-bold'>👋 Welcome, Lorem Ipsum!</h4>
-                                    <p className='text-2xl font-semibold'>What would you like to do today?</p>
+                                    <h4 className='text-2xl md:text-3xl text-[#FFF799] md:mt-24 mt-10 md:my-6 my-1 font-bold'>👋 Welcome, Lorem Ipsum!</h4>
+                                    <p className='text-sm md:text-2xl font-semibold text-center'>What would you like to do today?</p>
                                 </div>
-                                <div className='flex items-center mt-20 justify-center gap-12'>
-                                    <GradientBorderCard borderStyles='px-6 py-10 w-[300px] h-72' outerStyles='bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
-                                        <div className='flex flex-col items-center justify-center text-center' onClick={() => setChoosePlacements(true)}>
-                                            <CirclePlus size={52} className='text-[#FFEF3F]' />
-                                            <h4 className='py-6 font-bold text-xl text-[#FFEF3F]'>
+                                <div className='grid grid-cols-3 md:mt-20 mt-6 md:gap-12 gap-4 md:px-0 px-4'>
+                                    <GradientBorderCard borderStyles='w-full h-full border group-hover:border-transparent' outerStyles='p-[2px] cursor-pointer duration-500 ease-linear transition-all group bg-none text-mdnmd:e group-hover:bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                                        <div className='flex flex-col items-center justify-center text-center group-hover:bg-gradient-to-br from-pink-700 to-blue-800 bg-[#020617] duration-500 ease-linear transition-all w-full rounded-2xl h-full px-6 md:py-10 py-6' onClick={() => setChoosePlacements(true)}>
+                                            <CirclePlus size={52} className='text-[#FFEF3F] md:size-[53px] size-[40px]' />
+                                            <h4 className='md:py-6 pt-6 font-bold text-md md:text-xl text-[#FFEF3F]'>
                                                 Buy Ad Space
                                             </h4>
-                                            <p>Launch a new campaign in the
+                                            <p className='md:block hidden'>Launch a new campaign in the
                                                 stadium with WHU tokens.</p>
                                         </div>
-
                                     </GradientBorderCard>
-                                    <BorderCard cardStyles=' h-72 px-16 py-10' children={
-                                        <div className='flex flex-col items-center justify-center text-center'>
-                                            <ChartNoAxesCombined size={52} className='text-[#02FFFF]' />
-                                            <h4 className='py-6 font-bold text-xl'>
+                                    <GradientBorderCard borderStyles='w-full h-full border group-hover:border-transparent' outerStyles='p-[2px] cursor-pointer duration-500 ease-linear transition-all group bg-none group-hover:bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                                        <div className='flex flex-col items-center justify-center text-center group-hover:bg-gradient-to-br from-pink-700 to-blue-800 bg-[#020617] duration-500 ease-linear transition-all w-full rounded-2xl h-full px-6 md:py-10 py-6' onClick={() => setChoosePlacements(true)}>
+                                            <ChartNoAxesCombined size={52} className='text-[#02FFFF] md:size-[53px] size-[40px]' />
+                                            <h4 className='md:py-6 pt-6 font-bold text-md md:text-xl'>
                                                 View Analytics
                                             </h4>
-                                            <p>Check performance stats: impressions, clicks, engagement.</p>
+                                            <p className='md:block hidden'>Check performance stats: impressions, clicks, engagement.</p>
                                         </div>
-                                    } />
-                                    <BorderCard cardStyles=' h-72 px-16 py-10' children={
-                                        <div className='flex flex-col items-center justify-center text-center'>
-                                            <History size={52} className='text-[#02FFFF]' />
-                                            <h4 className='py-6 font-bold text-xl'>
+                                    </GradientBorderCard>
+                                    <GradientBorderCard borderStyles='w-full h-full border group-hover:border-transparent' outerStyles='p-[2px] cursor-pointer duration-500 ease-linear transition-all group bg-none group-hover:bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                                        <div className='flex flex-col items-center justify-center text-center group-hover:bg-gradient-to-br from-pink-700 to-blue-800 bg-[#020617] duration-500 ease-linear transition-all w-full rounded-2xl h-full px-6 md:py-10 py-6' onClick={() => setChoosePlacements(true)}>
+                                            <History size={52} className='text-[#02FFFF] md:size-[53px] size-[40px]' />
+                                            <h4 className='md:py-6 pt-6 font-bold text-md md:text-xl'>
                                                 Previous Ads
                                             </h4>
-                                            <p>Review and manage your past campaigns easily.</p>
+                                            <p className='md:block hidden'>Review and manage your past campaigns easily.</p>
                                         </div>
-                                    } />
+                                    </GradientBorderCard>
                                 </div>
 
-                                <div className='flex items-center justify-center w-full gap-12'>
-                                    <BorderCard cardStyles='mt-20 h-full px-16 py-4 border-[#00D35F]'>
+                                <div className='grid grid-cols-3 md:gap-12 gap-4 mt-20 md:px-0 px-4'>
+                                    <BorderCard cardStyles='md:!px-10 !px-2 py-4 !border-[#00D35F]'>
                                         <div className='flex flex-col items-center justify-center text-center'>
-                                            <h4 className='font-bold text-xl'>
+                                            <h4 className='font-bold text-md md:text-xl'>
                                                 Active Campaigns
                                             </h4>
                                             <p className='pt-4 text-[#00D35F] font-bold'>12</p>
                                         </div>
                                     </BorderCard>
-                                    <BorderCard cardStyles='mt-20 h-full px-16 py-4 border-[#FFA600]'>
+                                    <BorderCard cardStyles='md:!px-10 !px-2 py-4 border-[#FFA600]'>
                                         <div className='flex flex-col items-center justify-center text-center'>
-                                            <h4 className='font-bold text-xl'>
+                                            <h4 className='font-bold text-md md:text-xl'>
                                                 Total Spend (WHU)
                                             </h4>
                                             <p className='pt-4 text-[#FFA600] font-bold'>4,350</p>
                                         </div>
                                     </BorderCard>
-                                    <BorderCard cardStyles='mt-20 h-full px-16 py-4 border-[#C400F5]' >
+                                    <BorderCard cardStyles='md:!px-10 !px-2 py-4 border-[#C400F5]' >
                                         <div className='flex flex-col items-center justify-center text-center'>
-                                            <h4 className='font-bold text-xl'>
+                                            <h4 className='font-bold text-md md:text-xl'>
                                                 Impressions Today
                                             </h4>
                                             <p className='pt-4 text-[#C400F5] font-bold'>58.2K</p>
@@ -379,14 +376,14 @@ const Ads = () => {
                                 </div>
 
                                 <div>
-                                    <BorderCard cardStyles='mt-20 h-full px-16 py-10'>
+                                    <BorderCard cardStyles='mt-20 h-full md:px-16 md:py-10 md:border border-0'>
                                         <h3 className='text-[#FFF799] font-bold text-2xl text-center py-6'>Quality & Safety Overview</h3>
                                         <div className='flex flex-col gap-8'>
-                                            <div className='bg-[#03006059] px-10 py-8 rounded-2xl'>
+                                            <div className='bg-[#03006059] px-10 md:py-8 py-4 rounded-2xl'>
                                                 <div>
-                                                    <h3 className='font-semibold text-2xl'>✅ Brand Safety Reviews</h3>
-                                                    <p className='mt-6 text-sm tracking-wider'>We ensure every creative meets the highest safety and quality standards before going live.</p>
-                                                    <ul className='mt-2 list-disc pl-6 text-sm tracking-wider pr-40'>
+                                                    <h3 className='font-semibold text-xl md:text-2xl'>✅ Brand Safety Reviews</h3>
+                                                    <p className='mt-6 text-sm tracking-wider md:block hidden'>We ensure every creative meets the highest safety and quality standards before going live.</p>
+                                                    <ul className='mt-2 list-disc pl-6 text-sm tracking-wider pr-40 md:block hidden md:block hidden'>
                                                         <li>Dual Review Process - Each creative is automatically screened by AI and then manually
                                                             reviewed by our team.</li>
                                                         <li>No Harmful Content - Strict checks to prevent offensive, misleading, or inappropriate material.</li>
@@ -395,22 +392,22 @@ const Ads = () => {
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div className='bg-[#03006059] px-10 py-8 rounded-2xl'>
+                                            <div className='bg-[#03006059] px-10 md:py-8 py-4 rounded-2xl'>
                                                 <div>
-                                                    <h3 className='font-semibold text-2xl'>📊 Frequency Caps</h3>
-                                                    <p className='mt-6 text-sm tracking-wider'>We protect users from ad fatigue by controlling how often the same ad is shown, ensuring a fair and engaging experience.</p>
-                                                    <ul className='mt-2 list-disc pl-6 text-sm tracking-wider pr-40'>
+                                                    <h3 className='font-semibold text-xl md:text-2xl'>📊 Frequency Caps</h3>
+                                                    <p className='mt-6 text-sm tracking-wider md:block hidden'>We protect users from ad fatigue by controlling how often the same ad is shown, ensuring a fair and engaging experience.</p>
+                                                    <ul className='mt-2 list-disc pl-6 text-sm tracking-wider pr-40 md:block hidden'>
                                                         <li>Balanced Exposure - Prevents spamming with repetitive ads.</li>
                                                         <li>Flexible Controls - Custom caps adjustable for each campaign.</li>
                                                         <li>Smart Delivery - Adaptive AI optimizes frequency to reduce overexposure.</li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div className='bg-[#03006059] px-10 py-8 rounded-2xl'>
+                                            <div className='bg-[#03006059] px-10 md:py-8 py-4 rounded-2xl'>
                                                 <div>
-                                                    <h3 className='font-semibold text-2xl'>📈 Performance Analytics</h3>
-                                                    <p className='mt-6 text-sm tracking-wider'>Track, measure, and optimize campaigns with real-time insights. Our dashboards provide clear visibility into performance and ROI across all placements and audience segments.</p>
-                                                    <ul className='mt-2 list-disc pl-6 text-sm tracking-wider pr-40'>
+                                                    <h3 className='font-semibold text-xl md:text-2xl'>📈 Performance Analytics</h3>
+                                                    <p className='mt-6 text-sm tracking-wider md:block hidden'>Track, measure, and optimize campaigns with real-time insights. Our dashboards provide clear visibility into performance and ROI across all placements and audience segments.</p>
+                                                    <ul className='mt-2 list-disc pl-6 text-sm tracking-wider pr-40 md:block hidden'>
                                                         <li>Key Metrics - Impressions, clicks, CTR, conversions, and ROI tracking.</li>
                                                         <li>Audience Insights - Heatmaps and behavioral analytics for deeper engagement analysis.</li>
                                                         <li>Data-Driven Decisions - Optimize campaigns instantly with live performance reports.</li>

@@ -53,36 +53,36 @@ const CustodialWallet = () => {
 
     return (
         <>
-            <div className='px-40 py-10 pb-20'>
-                <h1 className='text-3xl text-center font-bold py-10'>{steps[currentStep].title}</h1>
+            <div className='md:px-40 px-4 py-10 pb-20'>
+                <h1 className='text-xl md:text-3xl text-center font-bold py-10'>{steps[currentStep].title}</h1>
                 <>
                     <GradientBorderCard outerStyles='bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
                         <div className='bg-[#020617] rounded-2xl py-8 px-8 '>
-                            <p className={` ${currentStep === 1 ? "" : currentStep === 4 ? "max-w-3xl text-center mx-auto" : "text-center"} tracking-wider font-semibold mb-6`}>{steps[currentStep].description}</p>
+                            <p className={` ${currentStep === 1 ? "" : currentStep === 4 ? "max-w-3xl text-center mx-auto" : "text-center"} md:text-base text-sm tracking-wider font-semibold mb-6`}>{steps[currentStep].description}</p>
                             {currentStep === 0 &&
-                                <div className='flex gap-6 items-center justify-center py-8'>
+                                <div className='flex md:flex-row flex-col gap-6 items-center justify-center py-8'>
                                     <BorderCard cardStyles='!p-0'>
                                         <div className='bg-[#020617] rounded-2xl'>
-                                            <div className='bg-gradient-to-r text-center from-[#c400f552] to-[#ff008c44] rounded-2xl px-4 py-6'>
-                                                <h2 className='text-2xl font-semibold'>1. Sign Up</h2>
-                                                <p className='text-center text-sm w-72 mt-4 font-semibold'>Create your custodial wallet account
+                                            <div className='bg-gradient-to-r text-center from-[#c400f552] to-[#ff008c44] rounded-2xl px-4 py-3 md:py-6'>
+                                                <h2 className='text-lg md:text-2xl font-semibold'>1. Sign Up</h2>
+                                                <p className='text-center text-xs md:text-sm md:w-72 md:mt-4 mt-2 font-semibold'>Create your custodial wallet account
                                                     with email or phone.</p>
                                             </div>
                                         </div>
                                     </BorderCard>
                                     <BorderCard cardStyles='!p-0'>
                                         <div className='bg-[#020617] rounded-2xl'>
-                                            <div className='bg-gradient-to-r text-center from-[#c400f552] to-[#ff008c44] rounded-2xl px-4 py-6'>
-                                                <h2 className='text-2xl font-semibold'>2. Secure</h2>
-                                                <p className='text-center text-sm w-72 mt-4 font-semibold'>Enable 2FA for added security and protect your funds.</p>
+                                            <div className='bg-gradient-to-r text-center from-[#c400f552] to-[#ff008c44] rounded-2xl px-4 py-3 md:py-6'>
+                                                <h2 className='text-lg md:text-2xl font-semibold'>2. Secure</h2>
+                                                <p className='text-center text-xs md:text-sm md:w-72 md:mt-4 mt-2 font-semibold'>Enable 2FA for added security and protect your funds.</p>
                                             </div>
                                         </div>
                                     </BorderCard>
                                     <BorderCard cardStyles='!p-0'>
                                         <div className='bg-[#020617] rounded-2xl'>
-                                            <div className='bg-gradient-to-r text-center from-[#c400f552] to-[#ff008c44] rounded-2xl px-4 py-6'>
-                                                <h2 className='text-2xl font-semibold'>3. Start Using</h2>
-                                                <p className='text-center text-sm w-72 mt-4 font-semibold'>Deposit , claim rewards, and
+                                            <div className='bg-gradient-to-r text-center from-[#c400f552] to-[#ff008c44] rounded-2xl px-4 py-3 md:py-6'>
+                                                <h2 className='text-lg md:text-2xl font-semibold'>3. Start Using</h2>
+                                                <p className='text-center text-xs md:text-sm md:w-72 md:mt-4 mt-2 font-semibold'>Deposit , claim rewards, and
                                                     join events easily.</p>
                                             </div>
                                         </div>
@@ -92,7 +92,7 @@ const CustodialWallet = () => {
                             {currentStep === 1 && <>
                                 <BorderCard cardStyles='!p-0 mb-8'>
                                     <div className='bg-[#020617] rounded-2xl'>
-                                        <div className='bg-gradient-to-r text-center from-[#c400f552] to-[#ff008c44] rounded-2xl py-2'>
+                                        <div className='bg-gradient-to-r text-center from-[#c400f552] to-[#ff008c44] rounded-2xl md:py-2 py-1'>
                                             <Input placeholder='Enter your email......' className='border-none focus:ring-0 outline-0 focus-visible:ring-0' />
                                         </div>
                                     </div>
@@ -108,7 +108,7 @@ const CustodialWallet = () => {
                                     </div> :
                                     <Button
                                         onClick={handleNext}
-                                        className="mt-4 w-[300px] mx-auto cursor-pointer bg-gradient-to-r from-[#FF00C7] to-[#0022FF] rounded-xl px-8 py-8 text-white font-semibold"
+                                        className="mt-4 md:w-[300px] w-[200px] mx-auto cursor-pointer bg-gradient-to-r from-[#FF00C7] to-[#0022FF] rounded-xl px-8 md:py-8 py-4 text-white font-semibold"
                                     >
                                         {steps[currentStep].buttonText} <ArrowRight />
                                     </Button>

@@ -36,21 +36,31 @@ const Social = () => {
                         <div className="max-w-[100rem] h-full w-full rounded-3xl p-[1px] bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] drop-shadow-xl drop-shadow-[#02ffffa6] overflow-hidden">
                             <div className='relative'>
                                 <div className='bg-black/60 absolute h-full w-full'></div>
-                                <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full'>
+                                <div className='absolute top-1/2 left-1/2 -translate-x-1/2 md:-translate-y-1/2 -translate-1/4 text-center w-full'>
                                     <h4 className='text-4xl md:text-6xl text text-border hero-font'>Your Stadium <br />
                                         <span className='text-3xl md:text-5xl'>Always Alive</span>
                                     </h4>
-                                    <p className='max-w-xl mx-auto py-10 text-md md:text-xl text-white'>Watch highlights, share clips, chat with fans, and join the action-
+                                    <p className='max-w-xl mx-auto md:py-10 py-4 text-base md:text-xl text-white'>Watch highlights, share clips, chat with fans, and join the action-
                                         all at one place.</p>
                                     <div className=' flex gap-6 justify-center'>
-                                        <ThemeButton title='Get Started' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 md:w-[300px] w-fit' />
+                                        <ThemeButton title='Get Started' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 md:w-[300px] w-fit md:block hidden ' />
+                                        <ThemeButton title='Get Started Now' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 md:hidden block w-[200px] h-10' />
                                     </div>
                                 </div>
-                                <div className='bg-[url(/social/hero.jpg)] h-[600px] bg-bottom w-full bg-cover rounded-3xl'></div>
+                                <div className='bg-[url(/social/hero.jpg)] h-[340px] md:h-[600px] bg-bottom w-full bg-cover rounded-3xl'></div>
                             </div>
                         </div>
                     </div>
                 </section>
+
+
+                <div className='md:hidden flex items-center gap-2 justify-center pt-4 relative'>
+                    <Button className='bg-blue-800 border-0 text-xs rounded-2xl font-semibold'>Feed</Button>
+                    <Button className='bg-[#03006040] border-0 text-xs rounded-2xl font-semibold'>Clubs</Button>
+                    <Button className='bg-[#03006040] border-0 text-xs rounded-2xl font-semibold'>Friends</Button>
+                    <Button className='bg-[#03006040] border-0 text-xs rounded-2xl font-semibold'>Messages</Button>
+                    <Button className='bg-[#03006040] border-0 text-xs rounded-2xl font-semibold'>Voice Rooms</Button>
+                </div>
 
                 <div className="flex min-h-screen p-8 md:px-12 px-4">
                     {/* ===== Sidebar ===== */}
@@ -83,14 +93,12 @@ const Social = () => {
                             </nav>
                         </div>
                     </aside>
-
                     {/* ===== Main Feed ===== */}
                     <main className=" md:px-8 overflow-hidden">
                         {/* Top Bar */}
                         <div className="flex justify-between items-center mb-6">
-                            <div className='flex items-center gap-3'>
-
-                                <div className="flex items-center gap-3 bg-[#03006040] border border-[#A4A0A0] rounded-xl px-4 py-1.5 md:w-[300px]">
+                            <div className='flex items-center gap-3 w-full'>
+                                <div className="flex items-center gap-3 bg-[#03006040] border border-[#A4A0A0] rounded-2xl md:rounded-xl px-4 md:py-1.5 md:w-[300px] w-full">
                                     <Input
                                         placeholder="What's on your mind ?"
                                         className="bg-transparent border-none text-sm focus-visible:ring-0 text-white"
@@ -98,15 +106,24 @@ const Social = () => {
                                     <Search className="h-4 w-4" />
                                 </div>
 
-                                <Button className='md:w-40 h-12 border rounded-2xl bg-[#03006040] border-[#A4A0A0] font-semibold cursor-pointer'>Create <SquarePen className='!w-5 !h-5' /></Button>
+                                <Button className='hidden md:block md:w-40 h-12 border rounded-2xl bg-[#03006040] border-[#A4A0A0] font-semibold cursor-pointer'>Create <SquarePen className='!w-5 !h-5' /></Button>
+                                <div className='md:hidden block'>
+
+                                    <Button
+                                        variant="ghost"
+                                        className="flex items-center justify-center gap-2 mt-auto hover:bg-[#111132]"
+                                    >
+                                        <Menu className="!h-7 !w-7" />
+                                    </Button>
+                                </div>
                             </div>
                         </div>
 
                         {/* Feed Title */}
-                        <h2 className="text-2xl font-bold text-[#02FFFF] mb-6">Global Feed</h2>
+                        <h2 className="text-xl md:text-2xl font-bold text-[#02FFFF] md:mb-6 mb-4">Global Feed</h2>
 
                         {/* Feed Card */}
-                        <div className='relative h-fit w-full rounded-2xl p-[1px] bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden'>
+                        <div className='relative h-fit w-full rounded-2xl p-[1px] md:bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden'>
                             <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl p-6 shadow-md">
                                 {/* User Info */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -115,7 +132,7 @@ const Social = () => {
                                         alt="Rohan Sharma"
                                         width={50}
                                         height={50}
-                                        className="rounded-full w-28 h-28 object-cover"
+                                        className="rounded-full w-16 md:w-28 h-16 md:h-28 object-cover"
                                     />
                                     <div>
                                         <h3 className="font-semibold text-lg">Rohan Sharma</h3>
@@ -157,7 +174,7 @@ const Social = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='relative mt-4 h-fit w-full rounded-2xl p-[1px] bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden'>
+                        <div className='relative mt-4 h-fit w-full rounded-2xl p-[1px] md:bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden'>
                             <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl p-6 shadow-md">
                                 {/* User Info */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -166,7 +183,7 @@ const Social = () => {
                                         alt="Rohan Sharma"
                                         width={50}
                                         height={50}
-                                        className="rounded-full w-28 h-28 object-cover"
+                                        className="rounded-full w-16 md:w-28 h-16 md:h-28 object-cover"
                                     />
                                     <div>
                                         <h3 className="font-semibold text-lg">Rohan Sharma</h3>

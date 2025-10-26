@@ -52,43 +52,50 @@ const Play = () => {
                     <div className='flex flex-col items-center justify-center py-6'>
                         <div className='bg-[url(/home/glow-home-l.svg)] left-0 -bottom-[60%] absolute w-[500px] h-[700px] bg-cover z-0'></div>
                         <div className='bg-[url(/home/glow-home-r.svg)] right-0 -bottom-[60%] absolute w-[500px] h-[700px] bg-cover z-0'></div>
-                        <div className="max-w-[100rem] h-full w-full rounded-3xl p-[1px] bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden">
+                        <div className="max-w-[100rem] h-full w-full md:mt-0 mt-10 rounded-3xl p-[1px] bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden">
                             <div className='relative'>
                                 <div className='bg-black/70 absolute h-full w-full'></div>
                                 <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full'>
-                                    <h4 className='text-4xl md:text-5xl text text-border hero-font'>Play. Connect. Compete.</h4>
-                                    <p className='max-w-2xl mx-auto py-10 text-md md:text-xl text-white'>Jump into casual lobbies , competitive queus,or tournaments with fairplay , rewards and real-time action.</p>
+                                    <h4 className='text-2xl md:text-5xl text text-border hero-font'>Play. Connect. Compete.</h4>
+                                    <p className='max-w-2xl mx-auto py-10 text-md md:text-xl text-white md:block hidden'>Jump into casual lobbies , competitive queus,or tournaments with fairplay , rewards and real-time action.</p>
+                                    <p className='max-w-2xl mx-auto py-6 text-md md:text-xl text-white md:hidden block'>Jump into lobbies , queus,or tournaments ,
+                                        earn rewards and real-time action.</p>
                                     <div className='flex md:flex-row flex-col items-center gap-6 justify-center'>
                                         <Button className='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 text-lg h-14 md:w-[320px] w-[200px] rounded-2xl font-semibold'><Image src={'/play/target.svg'} height={20} width={20} alt='Image' />Enter Lobby</Button>
-                                        <Button className='bg-[#03006040] hover:bg-[#040079] border text-lg h-14 md:w-[320px] w-[200px] rounded-2xl font-semibold'><Image src={'/play/chess.svg'} height={20} width={20} alt='Image' />View Tournament</Button>
+                                        <Button className='bg-[#03006040] hover:bg-[#040079] border text-lg h-14 md:w-[320px] w-[200px] rounded-2xl font-semibold md:block hidden'><Image src={'/play/chess.svg'} height={20} width={20} alt='Image' />View Tournament</Button>
                                     </div>
                                 </div>
-                                <div className='bg-[url(/play/hero-bg.jpg)] h-[600px] bg-bottom w-full bg-cover rounded-3xl'></div>
+                                <div className='bg-[url(/play/hero-bg.jpg)] h-[300px] bg-bottom w-full bg-cover rounded-3xl'></div>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section className='px-4'>
                     <div className='text-center mt-10 py-6'>
-                        <h3 className='font-black text-3xl'>Choose Your Arena</h3>
-                        <p className='text-[#E991FF] text-lg tracking-wider'>Step through the gates of competition</p>
+                        <h3 className='font-black text-2xl md:text-3xl'>Choose Your Arena</h3>
+                        <p className='text-[#E991FF] text-lg tracking-wider md:block hidden'>Step through the gates of competition</p>
+                        <div className='flex items-center gap-2 justify-center pt-10 relative'>
+                            <Button className='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 text-sm h-10 rounded-2xl font-semibold'>Casual</Button>
+                            <Button className='bg-[#03006040] border-0 text-sm h-10 rounded-2xl font-semibold'>Competition</Button>
+                            <Button className='bg-[#03006040] border-0 text-sm h-10 rounded-2xl font-semibold'>Tournament</Button>
+                        </div>
                     </div>
                     <div className="max-w-6xl relative mt-10 mx-auto h-full w-full rounded-3xl p-[1px] bg-gradient-to-b from-[#C400F5] to-[#02FFFF] overflow-hidden">
                         <div className='absolute top-4 right-4 backdrop-blur-[5px] bg-[#03006040] border border-[#A4A0A0] p-2 py-1 w-20 justify-center rounded-full flex items-center gap-2'>
                             <span className='h-2.5 w-2.5 rounded-full bg-green-500'></span>
                             Live
                         </div>
-                        <div className='absolute top-1/2 left-1/2 -translate-x-[46%] -translate-y-[40%] w-full'>
-                            <h4 className='font-black text-4xl py-1'>Battle Arena</h4>
-                            <p className='font-semibold'>12,067 Players online</p>
-                            <p>Global</p>
-                            <ThemeButton title='Play Now' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 mt-28' />
+                        <div className='absolute md:top-1/2 bottom-4 left-1/2 -translate-x-[46%] md:-translate-y-[40%] w-full'>
+                            <h4 className='font-black text-2xl md:text-4xl py-1'>Battle Arena</h4>
+                            <p className='font-semibold md:text-base text-sm'>12,067 Players online</p>
+                            <p className='md:text-base text-xs'>Global</p>
+                            <ThemeButton title='Play Now' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 md:mt-28 mt-2 md:w-[320px] w-[160px] md:h-14 h-10 rounded-2xl' />
                         </div>
-                        <div className='bg-[url(/play/man.jpg)] h-[500px] w-full bg-cover bg-top rounded-3xl'></div>
+                        <div className='bg-[url(/play/man.jpg)] h-[200px] md:h-[500px] w-full bg-no-repeat bg-cover bg-top rounded-3xl'></div>
                     </div>
                 </section>
                 <section className='py-6'>
-                    <div className='flex md:flex-row flex-col items-center md:gap-10 gap-6 justify-center py-10 relative'>
+                    <div className='md:flex hidden md:flex-row flex-col items-center md:gap-10 gap-6 justify-center py-10 relative'>
                         <div className='bg-[url(/home/glow-home-l.svg)] left-0 -bottom-[160%] absolute w-[500px] h-[700px] bg-cover z-0'></div>
                         <div className='bg-[url(/home/glow-home-r.svg)] right-0 -bottom-[160%] absolute w-[500px] h-[700px] bg-cover z-0'></div>
                         <Button className='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 text-lg h-14 w-[320px] rounded-2xl font-semibold'><Image src={'/play/fast_forward.svg'} height={28} width={28} alt='Image' />Casual Arena</Button>
@@ -96,16 +103,16 @@ const Play = () => {
                         <Button className='bg-[#03006040] border text-lg h-14 w-[320px] rounded-2xl font-semibold'><Image src={'/play/social_leaderboard.svg'} height={28} width={28} alt='Image' />Tournament Arena</Button>
                     </div>
 
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center max-w-5xl mx-auto px-4'>
+                    <div className='grid grid-cols-2 gap-6 place-items-center max-w-5xl mx-auto px-4'>
                         {casualArena.map((item, index) => (
                             <div key={index}>
-                                <div className="relative mt-10 h-fit w-fit rounded-3xl p-[1px] bg-gradient-to-b from-[#C400F5] to-[#02FFFF] overflow-hidden flex flex-col items-center">
-                                    <div className=' h-full bg-[#01011d]'>
+                                <div className="relative md:mt-10 mt-3 h-fit w-fit rounded-2xl p-[1px] bg-gradient-to-b from-[#C400F5] to-[#02FFFF] overflow-hidden flex flex-col items-center">
+                                    <div className='h-full w-[180px] bg-[#01011d] rounded-2xl px-3 py-4'>
                                         <div>
-                                            <Image src={item.imageUrl} height={200} width={200} alt='Image' className='w-[640px] h-[300px] rounded-2xl' />
+                                            <Image src={item.imageUrl} height={200} width={200} alt='Image' className='md:w-[640px] md:h-[300px] h-[140px] rounded-2xl' />
                                         </div>
-                                        <div className='px-10 py-6'>
-                                            <h4 className='text-[#02FFFF] text-xl pb-6'>{item.title}</h4>
+                                        <div className='px-10 py-6 md:block hidden'>
+                                            <h4 className='text-[#02FFFF] text-md md:text-xl pb-6'>{item.title}</h4>
                                             <p className='flex items-center gap-2 text-sm'><Image src={'/play/mode_heat.svg'} height={18} width={18} alt='Image' />{item.players} Players</p>
                                             <div className='flex items-center gap-2 text-sm mt-3'>
                                                 <p className='flex items-center gap-2'><Image src={'/play/electric_bolt.svg'} height={18} width={18} alt='Image' />{item.time} ms</p>
@@ -114,6 +121,16 @@ const Play = () => {
                                             <p className='flex items-center gap-2 mt-3'><Image src={'/play/moving.svg'} height={18} width={18} className='mt-1' alt='Image' />rising</p>
                                             <div className='flex justify-center'>
                                                 <ThemeButton title='Join Lobby' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 mt-6' />
+                                            </div>
+                                        </div>
+                                        <div className='mt-4 md:hidden block'>
+                                            <h4 className='text-[#02FFFF] pb-2'>{item.title}</h4>
+                                            <div className='flex items-center gap-4'>
+                                                <p className='flex items-center gap-2 text-sm'>{item.players} Players</p>
+                                                <p>{item.place}</p>
+                                            </div>
+                                            <div className='flex justify-center'>
+                                                <ThemeButton title='Join Lobby' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 mt-6 w-[120px] rounded-xl' />
                                             </div>
                                         </div>
                                     </div>

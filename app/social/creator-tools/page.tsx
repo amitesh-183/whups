@@ -1,10 +1,10 @@
-import Store from '@/pages/Store'
+import CreatorTools from '@/pages/CreatorTools'
 import React from 'react'
 
 const page = () => {
     return (
         <>
-            <Store />
+            <CreatorTools />
         </>
     )
 }

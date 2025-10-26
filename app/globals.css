@@ -180,3 +180,12 @@ body {
   border: 1px solid #a4a0a0;
   border-radius: 20px;
 }
+
+.swiper-pagination-bullet {
+  background-color: #a4a0a0 !important;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: #a4a0a0 !important;
+  opacity: 1;
+}

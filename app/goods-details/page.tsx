@@ -1,10 +1,10 @@
-import Store from '@/pages/Store'
+import DigitalDetails from '@/pages/DigitalDetails'
 import React from 'react'
 
 const page = () => {
     return (
         <>
-            <Store />
+            <DigitalDetails />
         </>
     )
 }

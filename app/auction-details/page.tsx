@@ -1,10 +1,10 @@
-import Store from '@/pages/Store'
+import AuctionDetails from '@/pages/AuctionDetails'
 import React from 'react'
 
 const page = () => {
     return (
         <>
-            <Store />
+            <AuctionDetails />
         </>
     )
 }
