@@ -48,7 +48,7 @@ const HomePage = () => {
                                             <p>32K watching</p>
                                         </div>
                                     </div>
-                                    <ThemeButton title='Join' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 !w-32 text-lg' />
+                                    <ThemeButton title='Join' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 !w-32 text-base md:h-12 h-10 md:text-lg' />
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@ const HomePage = () => {
                 <section className='flex flex-col gap-4 md:h-screen bg-black items-center justify-center text-white relative'>
                     <div className='bg-[url(/glow.png)] left-0 absolute w-[300px] h-[800px] -translate-y-40 bg-cover z-10 md:block hidden'></div>
                     <div className='bg-[url(/glow-r.png)] right-0 absolute w-[300px] h-[800px] -translate-y-40 bg-cover z-10 md:block hidden'></div>
-                    <h1 className='font-bold text-3xl md:text-5xl text-center leading-10 heading-font'>Enter the Digital Stadium</h1>
+                    <h1 className='font-bold text-2xl md:text-5xl text-center leading-10 heading-font'>Enter the Digital Stadium</h1>
                     <p className='text-[#D2FFFF] text-lg md:text-2xl font-semibold tracking-wider text-center max-w-4xl md:py-6 mt-2'>Experience real-time matches, virtual fan events, and exclusive creator moments — all in one interactive arena.</p>
                     <div className='flex md:flex-row flex-col justify-center items-center gap-12 md:mt-20 mt-6'>
                         <FeatureCard title="Panoramic Stadium View" para="A futuristic, metallic-render panoramic of a digital arena with AR overlays." cta="Go to Stadium" isBtnNedded={true} />

@@ -106,9 +106,8 @@ const Social = () => {
                                     <Search className="h-4 w-4" />
                                 </div>
 
-                                <Button className='hidden md:block md:w-40 h-12 border rounded-2xl bg-[#03006040] border-[#A4A0A0] font-semibold cursor-pointer'>Create <SquarePen className='!w-5 !h-5' /></Button>
+                                <Button className='hidden md:flex md:w-40 h-12 border rounded-2xl bg-[#03006040] border-[#A4A0A0] font-semibold cursor-pointer'>Create <SquarePen className='!w-5 !h-5' /></Button>
                                 <div className='md:hidden block'>
-
                                     <Button
                                         variant="ghost"
                                         className="flex items-center justify-center gap-2 mt-auto hover:bg-[#111132]"
@@ -116,6 +115,15 @@ const Social = () => {
                                         <Menu className="!h-7 !w-7" />
                                     </Button>
                                 </div>
+                            </div>
+                            <div className='md:block hidden'>
+
+                                <Button
+                                    variant="ghost"
+                                    className="flex items-center justify-center gap-2 mt-auto hover:bg-[#111132]"
+                                >
+                                    <Menu className="!h-7 !w-7" />
+                                </Button>
                             </div>
                         </div>
 
@@ -198,7 +206,7 @@ const Social = () => {
                                 </p>
 
                                 {/* Hashtags */}
-                                <div className="text-[#00C4F5] text-sm mb-4 space-x-2">
+                                <div className="text-[#00C4F5] text-xs md:text-sm mb-4 space-x-2">
                                     #GoalOfTheSeason #SportsHighlights #MatchDayMagic #ArenaReplays #Football
                                     #Community
                                 </div>
@@ -225,12 +233,12 @@ const Social = () => {
                                 </div>
                             </div>
                         </div>
-                        <Carousel className='py-8 px-6'>
+                        <Carousel className='py-8 md:px-6'>
                             <CarouselContent>
                                 <CarouselItem>
                                     {/* scroll 1 */}
                                     <div className='relative h-fit w-full rounded-2xl p-[1px] bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden'>
-                                        <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl p-6 shadow-md">
+                                        <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl md:p-6 p-3 shadow-md">
                                             {/* User Info */}
                                             <div className="flex items-center gap-3 mb-4">
                                                 <Image
@@ -238,7 +246,7 @@ const Social = () => {
                                                     alt="Rohan Sharma"
                                                     width={50}
                                                     height={50}
-                                                    className="rounded-full w-28 h-28 object-cover"
+                                                    className="rounded-full md:w-28 w-16 h-16 md:h-28 object-cover"
                                                 />
                                                 <div>
                                                     <h3 className="font-semibold text-lg">Rohan Sharma</h3>
@@ -247,7 +255,7 @@ const Social = () => {
                                             </div>
 
                                             {/* Post Content */}
-                                            <p className="text-sm mb-3">
+                                            <p className="text-xs md:text-sm mb-3">
                                                 🔥 That final goal still gives me goosebumps! Breaking down how it happened in
                                                 my new highlight reel.🚀
                                             </p>
@@ -336,19 +344,8 @@ const Social = () => {
                                     </div>
                                 </CarouselItem>
                             </CarouselContent>
-                            <CarouselPrevious className='border bg-black ml-14' />
-                            <CarouselNext className='border bg-black mr-14' />
                         </Carousel>
                     </main>
-                    <div className='md:block hidden'>
-
-                        <Button
-                            variant="ghost"
-                            className="flex items-center justify-center gap-2 mt-auto hover:bg-[#111132]"
-                        >
-                            <Menu className="!h-7 !w-7" />
-                        </Button>
-                    </div>
                 </div>
 
 

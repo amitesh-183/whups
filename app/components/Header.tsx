@@ -4,10 +4,12 @@ import Link from 'next/link'
 import React, { useRef, useEffect } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { Calendar, Drum, Gamepad2, Handbag, House, LogOut, Menu, Search, ShoppingCart, Tv, Users, Wallet, X } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
     const [open, setOpen] = React.useState(false)
     const menuRef = useRef<HTMLDivElement>(null)
+    const pathname = usePathname();
 
     // 👇 Disable scroll when menu is open
     useEffect(() => {
@@ -40,6 +42,18 @@ const Header = () => {
         }
     }, [open])
 
+
+    const navItems = [
+        { href: '/', label: 'Home', icon: <House /> },
+        { href: '/stadium', label: 'Stadium', icon: <Drum /> },
+        { href: '/play', label: 'Play', icon: <Gamepad2 /> },
+        { href: '/social', label: 'Social', icon: <Users /> },
+        { href: '/store', label: 'Store', icon: <Handbag /> },
+        { href: '/events', label: 'Events', icon: <Calendar /> },
+        { href: '/ads', label: 'Ads', icon: <Tv /> },
+        { href: '/wallet', label: 'Wallet', icon: <Wallet /> },
+    ]
+
     return (
         <>
             <header className='flex items-center justify-between md:px-16 px-4 md:py-6 py-3'>
@@ -67,15 +81,27 @@ const Header = () => {
                 {/* Desktop Nav */}
                 <nav className='md:flex gap-10 items-center hidden'>
                     <ul className='text-white flex gap-8'>
-                        <Link href={'/'}>Home</Link>
-                        <Link href={'/stadium'}>Stadium</Link>
-                        <Link href={'/play'}>Play</Link>
-                        <Link href={'/social'}>Social</Link>
-                        <Link href={'/store'}>Store</Link>
-                        <Link href={'/events'}>Events</Link>
-                        <Link href={'/ads'}>Ads</Link>
-                        <Link href={'/wallet'}>Wallet</Link>
-                        <Link href={'/search'}>Search</Link>
+                        {navItems.map(({ href, label }) => (
+                            <Link
+                                key={href}
+                                href={href}
+                                className={`transition-colors duration-300 ${pathname === href
+                                    ? 'text-[#02FFFF] font-semibold'
+                                    : 'hover:text-[#02FFFF]'
+                                    }`}
+                            >
+                                {label}
+                            </Link>
+                        ))}
+                        <Link
+                            href={'/search'}
+                            className={`transition-colors duration-300 ${pathname === '/search'
+                                ? 'text-[#02FFFF] font-semibold'
+                                : 'hover:text-[#02FFFF]'
+                                }`}
+                        >
+                            Search
+                        </Link>
                     </ul>
                     <Link href={'/profile'}>
                         <Avatar>
@@ -87,7 +113,7 @@ const Header = () => {
                 {/* Mobile Menu Icon */}
                 <div className='md:hidden flex gap-2'>
                     <Link href={'/'}><Search /></Link>
-                    <Link href={'/'}><Image src={'/Wallet.svg'} height={24} width={24} alt='Whu' /></Link>
+                    <Link href={'/wallet'}><Image src={'/Wallet.svg'} height={24} width={24} alt='Whu' /></Link>
                     <Link href={'/cart'}><ShoppingCart /></Link>
                 </div>
 
