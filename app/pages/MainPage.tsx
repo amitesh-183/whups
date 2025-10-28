@@ -1,5 +1,6 @@
 import FeatureCard from '@/components/Cards/FeatureCard'
 import ThemeButton from '@/components/ThemeButton'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -7,18 +8,25 @@ const MainPage = () => {
     return (
         <main>
             {/* hero section */}
-            <section className='flex flex-col gap-4 h-dvh items-center justify-center text-white'>
-                <div className='bg-[url(/home.png)] absolute h-screen w-full bg-cover -z-10'></div>
-                <h1 className='font-bold text-4xl md:text-6xl leading-10 heading-font'>Whuups</h1>
-                <h6 className='font-semibold text-[#0098C6] text-2xl md:text-3xl heading-font tracking-widest text-center'>United by Sports</h6>
-                <p className='text-[#D2FFFF] text-lg md:text-2xl font-semibold tracking-wider text-center max-w-4xl py-6 md:mt-6 md:px-0 px-4'>Step into the digital world of Whuups , compete , connect and celebrate the spirit of sports.</p>
-                <div className='flex md:gap-12 gap-4 md:flex-row flex-col'>
-                    <Link href="/home">
-                        <ThemeButton title='Explore the Stadium' btnStyle='' />
-                    </Link>
-                    <Link href="/home">
-                        <ThemeButton title='Join Whuups Social' btnStyle='bg-transparent bg-none' />
-                    </Link>
+            <section className='relative'>
+                <div className='absolute inset-0'>
+                    <video autoPlay loop muted width={"100%"} height={"100%"} className='object-fill opacity-90 h-dvh'>
+                        <source src="/animate.webm" />
+                    </video>
+                </div>
+                <div className='relative flex flex-col gap-4 h-dvh items-center justify-center text-white'>
+                    <h1 className='font-bold text-4xl md:text-6xl leading-10 heading-font'>Whuups</h1>
+                    <h6 className='font-semibold text-[#0098C6] text-2xl md:text-3xl heading-font tracking-widest text-center'>United by Sports</h6>
+                    <p className='text-[#D2FFFF] text-lg md:text-2xl font-semibold tracking-wider text-center max-w-4xl py-6 md:mt-6 md:px-0 px-4'>Step into the digital world of Whuups , compete , connect and celebrate the spirit of sports.</p>
+                    <div className='flex md:gap-12 gap-4 md:flex-row flex-col'>
+                        <Link href="/home">
+                            <ThemeButton title='Explore the Stadium' btnStyle='' />
+                        </Link>
+                        <Link href="/home">
+                            <ThemeButton title='Join Whuups Social' btnStyle='bg-transparent bg-none' />
+                        </Link>
+                    </div>
+                    {/* <div className='bg-[url(/home.png)] absolute h-dvh inset-0 w-full bg-cover -z-10'></div> */}
                 </div>
             </section>
             {/* feature section */}

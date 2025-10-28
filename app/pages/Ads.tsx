@@ -383,7 +383,7 @@ const Ads = () => {
                                                 <div>
                                                     <h3 className='font-semibold text-lg md:text-2xl'>✅ Brand Safety Reviews</h3>
                                                     <p className='mt-6 text-sm tracking-wider md:block hidden'>We ensure every creative meets the highest safety and quality standards before going live.</p>
-                                                    <ul className='mt-2 list-disc pl-6 text-sm tracking-wider pr-40 md:block hidden md:block hidden'>
+                                                    <ul className='mt-2 list-disc pl-6 text-sm tracking-wider pr-40 md:block hidden'>
                                                         <li>Dual Review Process - Each creative is automatically screened by AI and then manually
                                                             reviewed by our team.</li>
                                                         <li>No Harmful Content - Strict checks to prevent offensive, misleading, or inappropriate material.</li>
