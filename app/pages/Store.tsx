@@ -18,6 +18,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ShoppingCart } from 'lucide-react'
 import MarketPlace from '@/components/MarketPlace'
 import { Button } from '@/components/ui/button'
+import NavigationMob from '@/components/NavigationMob'
 
 const trending = [
     {
@@ -215,6 +216,7 @@ const Store = () => {
                 <MarketPlace />
             </main >
             <Footer />
+            <NavigationMob />
         </>
     )
 }

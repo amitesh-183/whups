@@ -1,11 +1,13 @@
+'use client'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import NavigationMob from '@/components/NavigationMob'
 import ThemeButton from '@/components/ThemeButton'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { title } from 'process'
-import React from 'react'
+import React, { useState } from 'react'
 
 const casualArena = [
     {
@@ -42,8 +44,95 @@ const casualArena = [
     }
 ];
 
+const competitionArena = [
+    {
+        title: "Cyber Strike Arena",
+        time: "15",
+        place: "Asia",
+        Exp: "2x",
+        imageUrl: "/play/cyber.jpg",
+        players: "2,847",
+    },
+    {
+        title: "Gladiator's Arena",
+        time: "15",
+        place: "NA",
+        Exp: "2x",
+        imageUrl: "/play/gladiator.jpg",
+        players: "2,847",
+    },
+    {
+        title: "Space Battle",
+        time: "15",
+        place: "EU",
+        Exp: "2x",
+        imageUrl: "/play/space-battle.jpg",
+        players: "2,847",
+    },
+    {
+        title: "Soccer Clash",
+        time: "15",
+        place: "SA",
+        Exp: "2x",
+        imageUrl: "/play/soccer.jpg",
+        players: "2,847",
+    }
+];
+
+const tournamentArena = [
+    {
+        title: "Space Battle",
+        time: "15",
+        place: "EU",
+        Exp: "2x",
+        imageUrl: "/play/space-battle.jpg",
+        players: "2,847",
+    },
+    {
+        title: "Gladiator's Arena",
+        time: "15",
+        place: "NA",
+        Exp: "2x",
+        imageUrl: "/play/gladiator.jpg",
+        players: "2,847",
+    },
+    {
+        title: "Cyber Strike Arena",
+        time: "15",
+        place: "Asia",
+        Exp: "2x",
+        imageUrl: "/play/cyber.jpg",
+        players: "2,847",
+    },
+    {
+        title: "Soccer Clash",
+        time: "15",
+        place: "SA",
+        Exp: "2x",
+        imageUrl: "/play/soccer.jpg",
+        players: "2,847",
+    }
+];
+
 
 const Play = () => {
+
+    // ---- 2️⃣ State for selected arena ----
+    const [selectedArena, setSelectedArena] = useState<'casual' | 'competition' | 'tournament'>('casual')
+
+    // ---- 3️⃣ Function to get current data ----
+    const getArenaData = () => {
+        switch (selectedArena) {
+            case 'competition':
+                return competitionArena
+            case 'tournament':
+                return tournamentArena
+            default:
+                return casualArena
+        }
+    }
+
+    const currentArenaData = getArenaData()
     return (
         <>
             <Header />
@@ -75,9 +164,15 @@ const Play = () => {
                         <h3 className='font-black text-2xl md:text-3xl'>Choose Your Arena</h3>
                         <p className='text-[#E991FF] text-lg tracking-wider md:block hidden'>Step through the gates of competition</p>
                         <div className='md:hidden flex items-center gap-2 justify-center pt-10 relative'>
-                            <Button className='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 text-sm h-10 rounded-2xl font-semibold'>Casual</Button>
-                            <Button className='bg-[#03006040] border-0 text-sm h-10 rounded-2xl font-semibold'>Competition</Button>
-                            <Button className='bg-[#03006040] border-0 text-sm h-10 rounded-2xl font-semibold'>Tournament</Button>
+                            <Button
+                                onClick={() => setSelectedArena('casual')}
+                                className={`${selectedArena === 'casual' ? 'bg-[#0022FF]' : 'bg-[#03006040]'} border-0 text-sm h-10 rounded-2xl font-semibold`}>Casual</Button>
+                            <Button
+                                onClick={() => setSelectedArena('competition')}
+                                className={`${selectedArena === 'competition' ? 'bg-[#0022FF]' : 'bg-[#03006040]'} border-0 text-sm h-10 rounded-2xl font-semibold`}>Competition</Button>
+                            <Button
+                                onClick={() => setSelectedArena('tournament')}
+                                className={`${selectedArena === 'tournament' ? 'bg-[#0022FF]' : 'bg-[#03006040]'} border-0 text-sm h-10 rounded-2xl font-semibold`}>Tournament</Button>
                         </div>
                     </div>
                     <div className="max-w-6xl relative mt-10 mx-auto h-full w-full rounded-3xl p-[1px] bg-gradient-to-b from-[#C400F5] to-[#02FFFF] overflow-hidden">
@@ -94,17 +189,24 @@ const Play = () => {
                         <div className='bg-[url(/play/man.jpg)] h-[200px] md:h-[500px] w-full bg-no-repeat bg-cover bg-top rounded-3xl'></div>
                     </div>
                 </section>
+                {/* <!-- Arena Selection */}
                 <section className='py-6'>
                     <div className='md:flex hidden md:flex-row flex-col items-center md:gap-10 gap-6 justify-center py-10 relative'>
                         <div className='bg-[url(/home/glow-home-l.svg)] left-0 -bottom-[160%] absolute w-[500px] h-[700px] bg-cover z-0'></div>
                         <div className='bg-[url(/home/glow-home-r.svg)] right-0 -bottom-[160%] absolute w-[500px] h-[700px] bg-cover z-0'></div>
-                        <Button className='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0 text-lg h-14 w-[320px] rounded-2xl font-semibold'><Image src={'/play/fast_forward.svg'} height={28} width={28} alt='Image' />Casual Arena</Button>
-                        <Button className='bg-[#03006040] border text-lg h-14 w-[320px] rounded-2xl font-semibold'><Image src={'/play/swords.svg'} height={28} width={28} alt='Image' />Competition Arena</Button>
-                        <Button className='bg-[#03006040] border text-lg h-14 w-[320px] rounded-2xl font-semibold'><Image src={'/play/social_leaderboard.svg'} height={28} width={28} alt='Image' />Tournament Arena</Button>
+                        <Button
+                            onClick={() => setSelectedArena('casual')}
+                            className={` ${selectedArena === 'casual' ? 'bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0' : 'bg-[#03006040] border'} text-lg h-14 w-[320px] rounded-2xl relative font-semibold`}><Image src={'/play/fast_forward.svg'} height={28} width={28} alt='Image' />Casual Arena</Button>
+                        <Button
+                            onClick={() => setSelectedArena('competition')}
+                            className={` ${selectedArena === 'competition' ? 'bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0' : 'bg-[#03006040] border'} text-lg h-14 w-[320px] rounded-2xl relative font-semibold`}><Image src={'/play/swords.svg'} height={28} width={28} alt='Image' />Competition Arena</Button>
+                        <Button
+                            onClick={() => setSelectedArena('tournament')}
+                            className={` ${selectedArena === 'tournament' ? 'bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0' : 'bg-[#03006040] border'} text-lg h-14 w-[320px] rounded-2xl relative font-semibold`}><Image src={'/play/social_leaderboard.svg'} height={28} width={28} alt='Image' />Tournament Arena</Button>
                     </div>
 
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 place-items-center max-w-5xl mx-auto px-4'>
-                        {casualArena.map((item, index) => (
+                        {currentArenaData.map((item, index) => (
                             <div key={index}>
                                 <div className="relative md:mt-10 mt-3 h-fit w-fit rounded-2xl p-[1px] bg-gradient-to-b from-[#C400F5] to-[#02FFFF] overflow-hidden flex flex-col items-center">
                                     <div className='h-full md:w-full bg-[#01011d] rounded-2xl px-3 py-4'>
@@ -139,6 +241,7 @@ const Play = () => {
                         ))}
                     </div>
                 </section>
+                {/* friends online */}
                 <section className='relative py-10 px-2'>
                     <div className='bg-[url(/home/glow-home-l.svg)] left-0 -bottom-[160%] absolute w-[500px] h-[700px] bg-cover z-0'></div>
                     <div className='bg-[url(/home/glow-home-r.svg)] right-0 -bottom-[160%] absolute w-[500px] h-[700px] bg-cover z-0'></div>
@@ -189,6 +292,7 @@ const Play = () => {
                         </div>
                     </div>
                 </section>
+                {/* Live Interaction Dashboard */}
                 <section>
                     <div className='text-center mt-10 py-6'>
                         <h3 className='font-black text-3xl'>Live Interaction Dashboard</h3>
@@ -396,6 +500,8 @@ const Play = () => {
                     </div>
 
                 </section>
+
+                {/* AntiCheat */}
                 <section className=' md:px-0 px-4'>
 
                     <div className="row-span-3 relative max-w-sm mx-auto bg-gradient-to-r md:mb-72 mt-10 p-[0.8px] from-[#C400F5] via-[#02FFFF] to-[#FA1500] rounded-2xl overflow-hidden">
@@ -409,6 +515,7 @@ const Play = () => {
                 </section>
             </main>
             <Footer />
+            <NavigationMob />
         </>
     )
 }

@@ -119,13 +119,13 @@ const Header = () => {
 
                 {/* Overlay */}
                 {open && (
-                    <div className='fixed inset-0 bg-black/40 z-50 transition-all duration-300'></div>
+                    <div className='fixed inset-0 bg-black/40 z-[80] transition-all duration-300'></div>
                 )}
 
                 {/* Sidebar Menu */}
                 <div
                     ref={menuRef}
-                    className={`fixed top-0 left-0 w-[60%] h-dvh bg-[#03006080] backdrop-blur-2xl z-50 
+                    className={`fixed top-0 left-0 w-[60%] h-dvh bg-[#03006080] backdrop-blur-2xl z-[99] 
                     ${open ? 'translate-x-0' : '-translate-x-full'} duration-300 ease-linear transition-all flex flex-col justify-between py-6`}
                 >
                     <div>

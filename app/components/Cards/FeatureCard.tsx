@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '../ui/button'
+import Link from 'next/link'
 
 interface FeatureCardProps {
     title: string
@@ -19,9 +20,11 @@ const FeatureCard = ({ title, para, cta, isBtnNedded = false, borderHeight }: Fe
                         {para}
                     </p>
                     {isBtnNedded &&
-                        <Button className="bg-[#030060] hover:bg-[#040079] cursor-pointer w-[200px] text-white font-bold tracking-wider px-5 py-2 rounded-full transition">
-                            {cta}
-                        </Button>
+                        <Link href="/home">
+                            <Button className="bg-[#030060] hover:bg-[#040079] cursor-pointer w-[200px] text-white font-bold tracking-wider px-5 py-2 rounded-full transition">
+                                {cta}
+                            </Button>
+                        </Link>
                     }
                 </div>
             </div>

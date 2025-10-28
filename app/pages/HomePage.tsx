@@ -6,6 +6,8 @@ import Header from '@/components/Header'
 import ThemeButton from '@/components/ThemeButton'
 import Image from 'next/image'
 import React from 'react'
+import NavigationMob from '@/components/NavigationMob'
+import Link from 'next/link'
 
 const HomePage = () => {
     return (
@@ -24,8 +26,12 @@ const HomePage = () => {
                                     <h4 className='text-2xl md:text-5xl text text-border hero-font'>Step into the Digital Stadium</h4>
                                     <p className='font-semiboldtext-md md:text-xl text-white pt-2'>Play, connect, and own your experience—powered by Whuups.</p>
                                     <div className='pt-8 flex md:flex-row flex-col items-center gap-6 justify-center'>
-                                        <ThemeButton title='Explore the Stadium' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0' />
-                                        <ThemeButton title='Join Whuups Social' btnStyle='bg-[#03006040] hover:bg-[#040079] bg-none' />
+                                        <Link href="/stadium">
+                                            <ThemeButton title='Explore the Stadium' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0' />
+                                        </Link>
+                                        <Link href="/social">
+                                            <ThemeButton title='Join Whuups Social' btnStyle='bg-[#03006040] hover:bg-[#040079] bg-none' />
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className='bg-[url(/home/Home-hero.png)] h-[440px] bg-center w-full bg-cover rounded-3xl'></div>
@@ -90,6 +96,7 @@ const HomePage = () => {
                 </section>
             </main>
             <Footer />
+            <NavigationMob />
         </>
     )
 }

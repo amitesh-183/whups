@@ -1,6 +1,7 @@
 'use client'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import NavigationMob from '@/components/NavigationMob'
 import ThemeButton from '@/components/ThemeButton'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, ArrowRight, Settings, SquarePen } from 'lucide-react'
@@ -188,6 +189,7 @@ const Profile = () => {
                 }
             </main>
             <Footer />
+            {!isEditing && <NavigationMob />}
         </>
     )
 }

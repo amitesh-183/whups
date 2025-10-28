@@ -56,10 +56,10 @@ const GlobalFeed = ({ open, setOpen }: Props) => {
                         </Button>
                     </div>
                     {/* menu bar */}
-                    <div className={`${open ? 'h-[500px]' : 'h-0'} overflow-hidden absolute right-0 z-10 top-12 duration-500 ease-in-out transition-all w-[400px]`}>
+                    <div className={`${open ? 'h-[500px]' : 'h-0'} overflow-hidden absolute right-0 z-10 top-12 duration-500 ease-in-out transition-all md:w-[400px] w-[320px]`}>
                         <BorderCard cardStyles='!p-0 overflow-hidden'>
                             <X className='absolute top-2 right-3 z-20 cursor-pointer' size={'28'} onClick={() => setOpen(!open)} />
-                            <div className=' bg-[#03006040] backdrop-blur-[2px] rounded-2xl p-8 px-12 h-[500px] overflow-y-scroll custom-scroll'>
+                            <div className=' bg-[#03006040] backdrop-blur-[2px] rounded-2xl p-8 md:px-12 px-6 h-[500px] overflow-y-scroll custom-scroll'>
                                 {/* Online Friends */}
                                 <div>
                                     <h4 className='text-xl font-bold'>Friend Online</h4>

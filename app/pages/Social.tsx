@@ -20,6 +20,7 @@ import 'swiper/css/pagination';
 import { FreeMode, Pagination } from 'swiper/modules';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import GlobalFeed from '@/components/GlobalFeed'
+import NavigationMob from '@/components/NavigationMob'
 
 
 const creators = [
@@ -250,6 +251,7 @@ const Social = () => {
                 </div>
             </main >
             <Footer />
+            <NavigationMob />
         </>
     )
 }

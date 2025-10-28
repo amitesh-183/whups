@@ -317,7 +317,7 @@ const Ads = () => {
                                     <h4 className='text-2xl md:text-3xl text-[#FFF799] md:mt-24 mt-10 md:my-6 my-1 font-bold'>👋 Welcome, Lorem Ipsum!</h4>
                                     <p className='text-sm md:text-2xl font-semibold text-center'>What would you like to do today?</p>
                                 </div>
-                                <div className='grid grid-cols-3 md:mt-20 mt-6 md:gap-12 gap-4 md:px-0 px-4'>
+                                <div className='grid grid-cols-2 md:grid-cols-3 md:mt-20 mt-6 md:gap-12 gap-4 md:px-0 px-4'>
                                     <GradientBorderCard borderStyles='w-full h-full border group-hover:border-transparent' outerStyles='p-[2px] cursor-pointer duration-500 ease-linear transition-all group bg-none text-mdnmd:e group-hover:bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
                                         <div className='flex flex-col items-center justify-center text-center group-hover:bg-gradient-to-br from-pink-700 to-blue-800 bg-[#020617] duration-500 ease-linear transition-all w-full rounded-2xl h-full px-6 md:py-10 py-6' onClick={() => setChoosePlacements(true)}>
                                             <CirclePlus size={52} className='text-[#FFEF3F] md:size-[53px] size-[40px]' />
@@ -348,7 +348,7 @@ const Ads = () => {
                                     </GradientBorderCard>
                                 </div>
 
-                                <div className='grid grid-cols-3 md:gap-12 gap-4 mt-20 md:px-0 px-4'>
+                                <div className='grid grid-cols-2 md:grid-cols-3 md:gap-12 gap-4 mt-20 md:px-0 px-4'>
                                     <BorderCard cardStyles='md:!px-10 !px-2 py-4 !border-[#00D35F]'>
                                         <div className='flex flex-col items-center justify-center text-center'>
                                             <h4 className='font-bold text-md md:text-xl'>
@@ -377,11 +377,11 @@ const Ads = () => {
 
                                 <div>
                                     <BorderCard cardStyles='mt-20 h-full md:px-16 md:py-10 md:border border-0'>
-                                        <h3 className='text-[#FFF799] font-bold text-2xl text-center py-6'>Quality & Safety Overview</h3>
+                                        <h3 className='text-[#FFF799] font-bold text-xl md:text-2xl text-center py-6'>Quality & Safety Overview</h3>
                                         <div className='flex flex-col gap-8'>
                                             <div className='bg-[#03006059] px-10 md:py-8 py-4 rounded-2xl'>
                                                 <div>
-                                                    <h3 className='font-semibold text-xl md:text-2xl'>✅ Brand Safety Reviews</h3>
+                                                    <h3 className='font-semibold text-lg md:text-2xl'>✅ Brand Safety Reviews</h3>
                                                     <p className='mt-6 text-sm tracking-wider md:block hidden'>We ensure every creative meets the highest safety and quality standards before going live.</p>
                                                     <ul className='mt-2 list-disc pl-6 text-sm tracking-wider pr-40 md:block hidden md:block hidden'>
                                                         <li>Dual Review Process - Each creative is automatically screened by AI and then manually
@@ -394,7 +394,7 @@ const Ads = () => {
                                             </div>
                                             <div className='bg-[#03006059] px-10 md:py-8 py-4 rounded-2xl'>
                                                 <div>
-                                                    <h3 className='font-semibold text-xl md:text-2xl'>📊 Frequency Caps</h3>
+                                                    <h3 className='font-semibold text-lg md:text-2xl'>📊 Frequency Caps</h3>
                                                     <p className='mt-6 text-sm tracking-wider md:block hidden'>We protect users from ad fatigue by controlling how often the same ad is shown, ensuring a fair and engaging experience.</p>
                                                     <ul className='mt-2 list-disc pl-6 text-sm tracking-wider pr-40 md:block hidden'>
                                                         <li>Balanced Exposure - Prevents spamming with repetitive ads.</li>
@@ -405,7 +405,7 @@ const Ads = () => {
                                             </div>
                                             <div className='bg-[#03006059] px-10 md:py-8 py-4 rounded-2xl'>
                                                 <div>
-                                                    <h3 className='font-semibold text-xl md:text-2xl'>📈 Performance Analytics</h3>
+                                                    <h3 className='font-semibold text-lg md:text-2xl'>📈 Performance Analytics</h3>
                                                     <p className='mt-6 text-sm tracking-wider md:block hidden'>Track, measure, and optimize campaigns with real-time insights. Our dashboards provide clear visibility into performance and ROI across all placements and audience segments.</p>
                                                     <ul className='mt-2 list-disc pl-6 text-sm tracking-wider pr-40 md:block hidden'>
                                                         <li>Key Metrics - Impressions, clicks, CTR, conversions, and ROI tracking.</li>
