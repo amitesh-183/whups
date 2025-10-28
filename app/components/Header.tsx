@@ -44,7 +44,7 @@ const Header = () => {
 
 
     const navItems = [
-        { href: '/', label: 'Home', icon: <House /> },
+        { href: '/home', label: 'Home', icon: <House /> },
         { href: '/stadium', label: 'Stadium', icon: <Drum /> },
         { href: '/play', label: 'Play', icon: <Gamepad2 /> },
         { href: '/social', label: 'Social', icon: <Users /> },

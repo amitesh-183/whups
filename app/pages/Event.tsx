@@ -251,7 +251,7 @@ const Event = () => {
                             <div className="h-full w-full rounded-2xl p-[1px] bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden">
                                 <div className='relative'>
                                     <div className='bg-black/70 absolute h-full w-full'></div>
-                                    <div className='absolute px-4 top-1/2 left-1/2 -translate-x-1/2 md:-translate-y-1/2 text-center w-full'>
+                                    <div className='absolute px-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full'>
                                         <p className='text-[#D2FFFF] font-semibold text-3xl'>Mega Event</p>
                                         <h4 className='text-2xl md:text-5xl text-border-2 hero-font mt-2'>Championship Final</h4>
                                         <p className='font-semiboldtext-md md:text-xl text-[#00FFEA] py-4 w-[60%] mx-auto md:block hidden'>Don't miss the ultimate showdown  with VIP lounges , exclusive content , and unforgettable experiences.</p>
@@ -304,7 +304,7 @@ const Event = () => {
                     </section>
                     <section className='py-20 md:px-0 px-4'>
                         <h3 className='text-2xl md:text-3xl font-bold text-center py-4'>🚀 Upcoming Events</h3>
-                        <div className='grid grid-cols-2 md:grid-cols-3 place-items-center max-w-7xl mx-auto md:gap-8 gap-4 mt-4 gap-y-10'>
+                        <div className='grid md:grid-cols-2 md:grid-cols-3 place-items-center max-w-7xl mx-auto md:gap-8 gap-4 mt-4 gap-y-10'>
                             {events.map((event, index) => (
                                 <div key={index} className='border relative border-[#0088FF] px-8 py-5 rounded-2xl bg-[#03006040] md:h-[600px] h-[300px] md:w-[420px] w-full'>
                                     <div className='flex items-center gap-4'>

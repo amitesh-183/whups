@@ -65,7 +65,7 @@ const Store = () => {
         <>
             <Header />
             <main>
-                <div className='flex items-center gap-2 px-4 pt-4 relative'>
+                <div className='md:hidden flex items-center gap-2 px-4 pt-4 relative'>
                     <Button className='bg-blue-800 border-0 h-10 w-[70px] rounded-2xl font-semibold'>All</Button>
                     <Button className='bg-[#03006040] border-0 h-10 w-[70px] rounded-2xl font-semibold'>New</Button>
                     <Button className='bg-[#03006040] border-0 h-10 w-[70px] rounded-2xl font-semibold'>Popular</Button>
@@ -133,7 +133,7 @@ const Store = () => {
                     >
                         {trending.map((ticket, index) => (
                             <SwiperSlide key={index} className='!p-0 !w-[200px]'>
-                                <BorderCard cardStyles=' px-4 py-4 h-[260px]'>
+                                <BorderCard cardStyles=' px-4 py-4 h-[280px]'>
                                     <div>
                                         <div className='flex justify-center'>
                                             <Image src={ticket.image} height={200} width={180} alt='wallet' className='object-cover h-[160px] rounded-2xl' />

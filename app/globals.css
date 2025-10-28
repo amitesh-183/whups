@@ -189,3 +189,22 @@ body {
   background-color: #a4a0a0 !important;
   opacity: 1;
 }
+
+.custom-scroll::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  width: 5px;
+  margin: 20px 0px;
+  background-color: blue;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  width: 5px;
+  background-color: transparent;
+}
