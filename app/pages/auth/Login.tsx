@@ -5,7 +5,7 @@ import React from 'react'
 const Login = () => {
     return (
         <div className='flex items-center justify-center h-screen relative overflow-hidden'>
-            <div className='absolute inset-0'>
+            <div className='absolute inset-0 md:block hidden'>
                 <video autoPlay loop muted width={"100%"} height={"100%"} className='object-fill opacity-90'>
                     <source src="/login.mp4" />
                 </video>
@@ -13,14 +13,15 @@ const Login = () => {
             <div className='absolute inset-0 bg-radial from-black/60 to-black to-80% backdrop-blur-sm'></div>
             <div className='relative flex flex-col items-center justify-center text-white'>
                 <div className=''>
-                    <Image src={"/logo.svg"} height={120} width={120} alt='Whuups' />
+                    <Image src={"/logo.svg"} height={120} width={120} alt='Whuups' className='md:w-[120px] w-[100px]' />
                 </div>
                 <div className='mt-12 flex justify-center flex-col items-center'>
-                    <h3 className='text-border-login text-3xl font-bold drop-shadow-2xl drop-shadow-black'>Welcome to the Whuups Stadium</h3>
-                    <p className='text-sm pt-2'>Step into the future of sports, entertainment, and experiences. Choose your journey below and get started.</p>
+                    <h3 className='text-border-login text-3xl font-bold drop-shadow-2xl drop-shadow-black md:block hidden'>Welcome to the Whuups Stadium</h3>
+                    <Image src={"/login-h-mob.svg"} height={120} width={120} alt='Whuups' className='w-[240px]' />
+                    <p className='text-sm pt-2 md:w-auto w-72 text-center'>Step into the future of sports, entertainment, and experiences. Choose your journey below and get started.</p>
                 </div>
                 <div className=' h-[300px] py-6 mt-10 flex'>
-                    <div className='relative  w-[300px] h-[300px]'>
+                    <div className='relative w-[300px] h-[300px]'>
                         <div className='absolute top-1/2 left-1/2 -translate-x-[60%] -translate-y-[60%] z-10 flex flex-col items-center justify-center'>
                             <div>
                                 <Image src={"/login/User.svg"} height={50} width={50} alt='User' />
@@ -55,7 +56,7 @@ const Login = () => {
                     </div>
 
                 </div>
-                <p className='text-sm pt-6'>✨ Exciting adventures await you inside! ✨</p>
+                <p className='text-sm pt-6 text-center'>✨ Exciting adventures await you inside! ✨</p>
             </div>
         </div>
     )
