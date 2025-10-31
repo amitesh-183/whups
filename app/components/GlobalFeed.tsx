@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { FreeMode, Pagination } from 'swiper/modules';
 import { Input } from './ui/input';
-import { AudioLines, Menu, Mic, Search, SquarePen, X } from 'lucide-react';
+import { AudioLines, Heart, Menu, MessageSquareText, Mic, Search, SquarePen, Upload, X } from 'lucide-react';
 import { Button } from './ui/button';
 import GradientBorderCard from './Cards/GradientBorderCard';
 import BorderCard from './Cards/BorderCard';
@@ -322,106 +322,109 @@ const GlobalFeed = ({ open, setOpen }: Props) => {
                 <h2 className="text-xl md:text-2xl font-bold text-[#02FFFF] md:mb-6 mb-4">Global Feed</h2>
 
                 {/* Feed Card */}
-                <div className='relative h-fit w-full rounded-2xl p-[1px] md:bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden'>
-                    <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl p-6 shadow-md">
-                        {/* User Info */}
-                        <div className="flex items-center gap-3 mb-4">
-                            <Image
-                                src="/social/rohit.jpg"
-                                alt="Rohan Sharma"
-                                width={50}
-                                height={50}
-                                className="rounded-full w-16 md:w-28 h-16 md:h-28 object-cover"
-                            />
-                            <div>
-                                <h3 className="font-semibold text-lg">Rohan Sharma</h3>
-                                <p className=" text-sm">5 min ago</p>
+                <div>
+                    <GradientBorderCard outerStyles='md:bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                        <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl p-6 shadow-md">
+                            {/* User Info */}
+                            <div className="flex items-center gap-3 mb-4">
+                                <Image
+                                    src="/social/rohit.jpg"
+                                    alt="Rohan Sharma"
+                                    width={50}
+                                    height={50}
+                                    className="rounded-full w-16 md:w-28 h-16 md:h-28 object-cover"
+                                />
+                                <div>
+                                    <h3 className="font-semibold text-lg">Rohan Sharma</h3>
+                                    <p className=" text-sm">5 min ago</p>
+                                </div>
+                            </div>
+
+                            {/* Post Content */}
+                            <p className="text-sm mb-3">
+                                🔥 That final goal still gives me goosebumps! Breaking down how it happened in
+                                my new highlight reel.🚀
+                            </p>
+
+                            {/* Hashtags */}
+                            <div className="text-[#00C4F5] text-sm mb-4 space-x-2">
+                                #GoalOfTheSeason #SportsHighlights #MatchDayMagic #ArenaReplays #Football
+                                #Community
+                            </div>
+
+                            {/* Post Image */}
+                            <div className="relative rounded-xl overflow-hidden border border-[#1E1E3A]">
+                                <Image
+                                    src="/social/football.jpg"
+                                    alt="Football highlight"
+                                    width={800}
+                                    height={450}
+                                    className="object-cover w-full md:h-[280px] h-[160px]"
+                                />
                             </div>
                         </div>
-
-                        {/* Post Content */}
-                        <p className="text-sm mb-3">
-                            🔥 That final goal still gives me goosebumps! Breaking down how it happened in
-                            my new highlight reel.🚀
-                        </p>
-
-                        {/* Hashtags */}
-                        <div className="text-[#00C4F5] text-sm mb-4 space-x-2">
-                            #GoalOfTheSeason #SportsHighlights #MatchDayMagic #ArenaReplays #Football
-                            #Community
+                    </GradientBorderCard>
+                    {/* Actions */}
+                    <div className="flex justify-between items-center my-4 text-gray-400">
+                        <div className="flex items-center gap-4">
+                            <button title='like'><Heart /></button>
+                            <button title='message'><MessageSquareText /></button>
+                            <button title='upload'><Upload /></button>
                         </div>
-
-                        {/* Post Image */}
-                        <div className="relative rounded-xl overflow-hidden border border-[#1E1E3A]">
-                            <Image
-                                src="/social/football.jpg"
-                                alt="Football highlight"
-                                width={800}
-                                height={450}
-                                className="object-cover w-full md:h-[280px] h-[160px]"
-                            />
-                        </div>
-
-                        {/* Actions */}
-                        <div className="flex justify-between items-center mt-4 text-gray-400">
-                            <div className="flex gap-4">
-                                <button>❤️</button>
-                                <button>💬</button>
-                                <button>🔗</button>
-                            </div>
-                            <button>🔊</button>
-                        </div>
+                        <button title='whu'><Image src="/wallet/whu.svg" alt="Share" width={20} height={20} className='w-[20px] md:w-[30px] h-[20px] md:h-[30px]' /></button>
                     </div>
                 </div>
-                <div className='relative mt-4 h-fit w-full rounded-2xl p-[1px] md:bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden'>
-                    <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl p-6 shadow-md">
-                        {/* User Info */}
-                        <div className="flex items-center gap-3 mb-4">
-                            <Image
-                                src="/social/rohit.jpg"
-                                alt="Rohan Sharma"
-                                width={50}
-                                height={50}
-                                className="rounded-full w-16 md:w-28 h-16 md:h-28 object-cover"
-                            />
-                            <div>
-                                <h3 className="font-semibold text-lg">Rohan Sharma</h3>
-                                <p className=" text-sm">5 min ago</p>
+                {/* feed card */}
+                <div>
+                    <GradientBorderCard outerStyles='md:bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                        <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl p-6 shadow-md">
+                            {/* User Info */}
+                            <div className="flex items-center gap-3 mb-4">
+                                <Image
+                                    src="/social/rohit.jpg"
+                                    alt="Rohan Sharma"
+                                    width={50}
+                                    height={50}
+                                    className="rounded-full w-16 md:w-28 h-16 md:h-28 object-cover"
+                                />
+                                <div>
+                                    <h3 className="font-semibold text-lg">Rohan Sharma</h3>
+                                    <p className=" text-sm">5 min ago</p>
+                                </div>
+                            </div>
+
+                            {/* Post Content */}
+                            <p className="text-sm mb-3">
+                                🔥 That final goal still gives me goosebumps! Breaking down how it happened in
+                                my new highlight reel.🚀
+                            </p>
+
+                            {/* Hashtags */}
+                            <div className="text-[#00C4F5] text-sm mb-4 space-x-2">
+                                #GoalOfTheSeason #SportsHighlights #MatchDayMagic #ArenaReplays #Football
+                                #Community
+                            </div>
+
+                            {/* Post Image */}
+                            <div className="relative rounded-xl overflow-hidden border border-[#1E1E3A]">
+                                <Image
+                                    src="/social/football.jpg"
+                                    alt="Football highlight"
+                                    width={800}
+                                    height={450}
+                                    className="object-cover w-full md:h-[280px] h-[160px]"
+                                />
                             </div>
                         </div>
-
-                        {/* Post Content */}
-                        <p className="text-sm mb-3">
-                            🔥 That final goal still gives me goosebumps! Breaking down how it happened in
-                            my new highlight reel.🚀
-                        </p>
-
-                        {/* Hashtags */}
-                        <div className="text-[#00C4F5] text-xs md:text-sm mb-4 space-x-2">
-                            #GoalOfTheSeason #SportsHighlights #MatchDayMagic #ArenaReplays #Football
-                            #Community
+                    </GradientBorderCard>
+                    {/* Actions */}
+                    <div className="flex justify-between items-center mt-4 text-gray-400 px-4">
+                        <div className="flex items-center gap-4">
+                            <button title='like'><Heart /></button>
+                            <button title='message'><MessageSquareText /></button>
+                            <button title='upload'><Upload /></button>
                         </div>
-
-                        {/* Post Image */}
-                        <div className="relative rounded-xl overflow-hidden border border-[#1E1E3A]">
-                            <Image
-                                src="/social/football.jpg"
-                                alt="Football highlight"
-                                width={800}
-                                height={450}
-                                className="object-cover w-full md:h-[280px] h-[160px]"
-                            />
-                        </div>
-
-                        {/* Actions */}
-                        <div className="flex justify-between items-center mt-4 text-gray-400">
-                            <div className="flex gap-4">
-                                <button>❤️</button>
-                                <button>💬</button>
-                                <button>🔗</button>
-                            </div>
-                            <button>🔊</button>
-                        </div>
+                        <button title='whu'><Image src="/wallet/whu.svg" alt="Share" width={20} height={20} className='w-[20px] md:w-[30px] h-[20px] md:h-[30px]' /></button>
                     </div>
                 </div>
                 <div className='py-10 pr-6'>
@@ -429,9 +432,9 @@ const GlobalFeed = ({ open, setOpen }: Props) => {
                         slidesPerView={2}
                         spaceBetween={10}
                         freeMode={true}
-                        pagination={{
-                            clickable: true,
-                        }}
+                        // pagination={{
+                        //     clickable: true,
+                        // }}
                         modules={[FreeMode, Pagination]}
                         className="mySwiper !px-3"
                         breakpoints={{
@@ -442,109 +445,113 @@ const GlobalFeed = ({ open, setOpen }: Props) => {
                     >
                         <SwiperSlide className='!w-full md:!w-1/2'>
                             {/* scroll 1 */}
-                            <div className='relative h-fit w-full rounded-2xl p-[1px] bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden'>
-                                <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl md:p-6 p-3 shadow-md">
-                                    {/* User Info */}
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <Image
-                                            src="/social/rohit.jpg"
-                                            alt="Rohan Sharma"
-                                            width={50}
-                                            height={50}
-                                            className="rounded-full md:w-28 w-16 h-16 md:h-28 object-cover"
-                                        />
-                                        <div>
-                                            <h3 className="font-semibold text-lg">Rohan Sharma</h3>
-                                            <p className=" text-sm">5 min ago</p>
+                            <div>
+                                <GradientBorderCard outerStyles='md:bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                                    <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl md:p-6 p-3 shadow-md">
+                                        {/* User Info */}
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <Image
+                                                src="/social/rohit.jpg"
+                                                alt="Rohan Sharma"
+                                                width={50}
+                                                height={50}
+                                                className="rounded-full md:w-28 w-16 h-16 md:h-28 object-cover"
+                                            />
+                                            <div>
+                                                <h3 className="font-semibold text-lg">Rohan Sharma</h3>
+                                                <p className=" text-sm">5 min ago</p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    {/* Post Content */}
-                                    <p className="text-xs md:text-sm mb-3">
-                                        🔥 That final goal still gives me goosebumps! Breaking down how it happened in
-                                        my new highlight reel.🚀
-                                    </p>
+                                        {/* Post Content */}
+                                        <p className="text-xs md:text-sm mb-3">
+                                            🔥 That final goal still gives me goosebumps! Breaking down how it happened in
+                                            my new highlight reel.🚀
+                                        </p>
 
-                                    {/* Hashtags */}
-                                    <div className="text-[#00C4F5] text-sm mb-4 space-x-2">
-                                        #GoalOfTheSeason #SportsHighlights #MatchDayMagic #ArenaReplays #Football
-                                        #Community
-                                    </div>
-
-                                    {/* Post Image */}
-                                    <div className="relative rounded-xl overflow-hidden border border-[#1E1E3A]">
-                                        <Image
-                                            src="/social/football.jpg"
-                                            alt="Football highlight"
-                                            width={800}
-                                            height={450}
-                                            className="object-cover w-full md:h-[280px] h-[140px]"
-                                        />
-                                    </div>
-
-                                    {/* Actions */}
-                                    <div className="hidden md:flex justify-between items-center mt-4 text-gray-400">
-                                        <div className="flex gap-4">
-                                            <button>❤️</button>
-                                            <button>💬</button>
-                                            <button>🔗</button>
+                                        {/* Hashtags */}
+                                        <div className="text-[#00C4F5] text-sm mb-4 space-x-2">
+                                            #GoalOfTheSeason #SportsHighlights #MatchDayMagic #ArenaReplays #Football
+                                            #Community
                                         </div>
-                                        <button>🔊</button>
+
+                                        {/* Post Image */}
+                                        <div className="relative rounded-xl overflow-hidden border border-[#1E1E3A]">
+                                            <Image
+                                                src="/social/football.jpg"
+                                                alt="Football highlight"
+                                                width={800}
+                                                height={450}
+                                                className="object-cover w-full md:h-[280px] h-[140px]"
+                                            />
+                                        </div>
+
                                     </div>
+                                </GradientBorderCard>
+                                {/* Actions */}
+                                <div className="flex justify-between items-center mt-4 text-gray-400 px-4">
+                                    <div className="flex items-center gap-4">
+                                        <button title='like'><Heart /></button>
+                                        <button title='message'><MessageSquareText /></button>
+                                        <button title='upload'><Upload /></button>
+                                    </div>
+                                    <button title='whu'><Image src="/wallet/whu.svg" alt="Share" width={20} height={20} className='w-[20px] md:w-[30px] h-[20px] md:h-[30px]' /></button>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide className='!w-full md:!w-1/2'>
-                            { /* scroll 2 */}
-                            <div className='relative h-fit w-full rounded-2xl p-[1px] bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden'>
-                                <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl md:p-6 p-3 shadow-md">
-                                    {/* User Info */}
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <Image
-                                            src="/social/rohit.jpg"
-                                            alt="Rohan Sharma"
-                                            width={50}
-                                            height={50}
-                                            className="rounded-full md:w-28 w-16 h-16 md:h-28 object-cover"
-                                        />
-                                        <div>
-                                            <h3 className="font-semibold text-lg">Rohan Sharma</h3>
-                                            <p className=" text-sm">5 min ago</p>
+                            {/* scroll 1 */}
+                            <div>
+                                <GradientBorderCard outerStyles='md:bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500]'>
+                                    <div className="bg-[#0B0B24] border border-[#1E1E3A] rounded-2xl md:p-6 p-3 shadow-md">
+                                        {/* User Info */}
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <Image
+                                                src="/social/rohit.jpg"
+                                                alt="Rohan Sharma"
+                                                width={50}
+                                                height={50}
+                                                className="rounded-full md:w-28 w-16 h-16 md:h-28 object-cover"
+                                            />
+                                            <div>
+                                                <h3 className="font-semibold text-lg">Rohan Sharma</h3>
+                                                <p className=" text-sm">5 min ago</p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    {/* Post Content */}
-                                    <p className="text-xs md:text-sm mb-3">
-                                        🔥 That final goal still gives me goosebumps! Breaking down how it happened in
-                                        my new highlight reel.🚀
-                                    </p>
+                                        {/* Post Content */}
+                                        <p className="text-xs md:text-sm mb-3">
+                                            🔥 That final goal still gives me goosebumps! Breaking down how it happened in
+                                            my new highlight reel.🚀
+                                        </p>
 
-                                    {/* Hashtags */}
-                                    <div className="text-[#00C4F5] text-sm mb-4 space-x-2">
-                                        #GoalOfTheSeason #SportsHighlights #MatchDayMagic #ArenaReplays #Football
-                                        #Community
-                                    </div>
-
-                                    {/* Post Image */}
-                                    <div className="relative rounded-xl overflow-hidden border border-[#1E1E3A]">
-                                        <Image
-                                            src="/social/football.jpg"
-                                            alt="Football highlight"
-                                            width={800}
-                                            height={450}
-                                            className="object-cover w-full md:h-[280px] h-[140px]"
-                                        />
-                                    </div>
-
-                                    {/* Actions */}
-                                    <div className="hidden md:flex justify-between items-center mt-4 text-gray-400">
-                                        <div className="flex gap-4">
-                                            <button>❤️</button>
-                                            <button>💬</button>
-                                            <button>🔗</button>
+                                        {/* Hashtags */}
+                                        <div className="text-[#00C4F5] text-sm mb-4 space-x-2">
+                                            #GoalOfTheSeason #SportsHighlights #MatchDayMagic #ArenaReplays #Football
+                                            #Community
                                         </div>
-                                        <button>🔊</button>
+
+                                        {/* Post Image */}
+                                        <div className="relative rounded-xl overflow-hidden border border-[#1E1E3A]">
+                                            <Image
+                                                src="/social/football.jpg"
+                                                alt="Football highlight"
+                                                width={800}
+                                                height={450}
+                                                className="object-cover w-full md:h-[280px] h-[140px]"
+                                            />
+                                        </div>
+
                                     </div>
+                                </GradientBorderCard>
+                                {/* Actions */}
+                                <div className="flex justify-between items-center mt-4 text-gray-400 px-4">
+                                    <div className="flex items-center gap-4">
+                                        <button title='like'><Heart /></button>
+                                        <button title='message'><MessageSquareText /></button>
+                                        <button title='upload'><Upload /></button>
+                                    </div>
+                                    <button title='whu'><Image src="/wallet/whu.svg" alt="Share" width={20} height={20} className='w-[20px] md:w-[30px] h-[20px] md:h-[30px]' /></button>
                                 </div>
                             </div>
                         </SwiperSlide>

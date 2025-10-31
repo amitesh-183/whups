@@ -100,7 +100,7 @@ const Store = () => {
                         ))}
                     </Swiper>
                 </section>
-                <section className="md:px-12 relativet md:my-20 my-10">
+                <section className="md:px-12 relativet md:my-8 my-10">
                     <div className='flex flex-col items-center justify-center'>
                         <div className="max-w-[100rem] h-full w-full rounded-3xl p-[1px] bg-gradient-to-r from-[#C400F5] via-[#02FFFF] to-[#FA1500] overflow-hidden">
                             <div className='relative'>
@@ -112,7 +112,7 @@ const Store = () => {
                                         <ThemeButton title='Shop Now' btnStyle='bg-linear-to-r from-[#FF008C] to-[#0022FF] border-0' />
                                     </div>
                                 </div>
-                                <div className='bg-[url(/home/Home-hero.png)] h-[220px] md:h-[440px] bg-center w-full bg-cover rounded-3xl'></div>
+                                <div className='bg-[url(/home/Home-hero.png)] h-[220px] md:h-[480px] bg-center w-full bg-cover rounded-3xl'></div>
                             </div>
                         </div>
                     </div>

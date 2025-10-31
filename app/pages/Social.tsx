@@ -5,7 +5,7 @@ import ThemeButton from '@/components/ThemeButton'
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import { Input } from '@/components/ui/input'
-import { Search, Menu, MessageSquare, Users, Mic2, Zap, Trophy, SquarePen, X, Mic, AudioLines } from 'lucide-react'
+import { Search, Menu, MessageSquare, Users, Mic2, Zap, Trophy, SquarePen, X, Mic, AudioLines, UserPlus } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 
@@ -38,6 +38,26 @@ const creators = [
         name: "Zane Prodigy",
         role: "Esports & Sports Fusion",
         image: "/social/maike.jpg",
+    },
+    {
+        name: "Liam Crossfield",
+        role: "Pro Striker",
+        image: "/social/leanardo.jpg",
+    },
+    {
+        name: 'Ava “HoopQueen”',
+        role: "Basketball Creator",
+        image: "/social/avya.jpg",
+    },
+    {
+        name: "Liam Crossfield",
+        role: "Pro Striker",
+        image: "/social/leanardo.jpg",
+    },
+    {
+        name: 'Ava “HoopQueen”',
+        role: "Basketball Creator",
+        image: "/social/avya.jpg",
     },
 ];
 
@@ -145,40 +165,58 @@ const Social = () => {
                     <h2 className="text-2xl font-semibold mb-8">Suggested Creators</h2>
 
                     {/* ===== Creators List ===== */}
-                    <div className="flex flex-wrap justify-center gap-6">
-                        {creators.map((creator, index) => (
-                            <div
-                                key={index}
-                                className="bg-[#0B0B24]/70 rounded-2xl 
-                       hover:scale-[1.02] transition-all duration-300 relative mt-12 p-[1px] bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]"
-                                style={{
-                                    background:
-                                        "linear-gradient(135deg, #00C4F5 0%, #6A00FF 50%, #FF00C7 100%)",
-                                }}
-                            >
-
-                                <div className="bg-[#0B0B24]/90 rounded-2xl p-5 flex flex-col items-center">
-                                    <div className='relative p-[1px] bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500] w-32 h-32 rounded-full -mt-20'>
-                                        <Image
-                                            src={creator.image}
-                                            alt={creator.name}
-                                            width={100}
-                                            height={100}
-                                            className="rounded-full mb-4 border-2 border-[#1E1E3A] h-32 w-32 object-cover absolute"
-                                        />
-                                    </div>
-                                    <h3 className="text-lg font-semibold">{creator.name}</h3>
-                                    <p className="text-[#00C4F5] text-sm mb-4">{creator.role}</p>
-
-                                    <Button
-                                        className="rounded-xl bg-gradient-to-r from-[#0022FF] to-[#00C4F5] px-5 py-2 text-white font-medium"
-                                        variant="ghost"
+                    <div className="flex justify-center max-w-6xl md:ml-auto gap-6">
+                        <Swiper
+                            slidesPerView={3}
+                            spaceBetween={20}
+                            freeMode={true}
+                            // pagination={{
+                            //     clickable: true,
+                            // }}
+                            modules={[FreeMode, Pagination]}
+                            className="mySwiper !p-6"
+                            breakpoints={{
+                                400: {
+                                    slidesPerView: 1
+                                }
+                            }}
+                        >
+                            {creators.map((creator, index) => (
+                                <SwiperSlide className='!w-auto'>
+                                    <div
+                                        key={index}
+                                        className="bg-[#0B0B24]/70 rounded-2xl 
+                            hover:scale-[1.02] transition-all duration-300 relative mt-12 p-[1px] bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500]"
+                                        style={{
+                                            background:
+                                                "linear-gradient(135deg, #00C4F5 0%, #6A00FF 50%, #FF00C7 100%)",
+                                        }}
                                     >
-                                        👤 Follow
-                                    </Button>
-                                </div>
-                            </div>
-                        ))}
+
+                                        <div className="bg-[#0B0B24]/90 rounded-2xl p-5 flex flex-col items-center">
+                                            <div className='relative p-[1px] bg-gradient-to-b from-[#C400F5] via-[#02FFFF] to-[#FA1500] w-32 h-32 rounded-full -mt-20'>
+                                                <Image
+                                                    src={creator.image}
+                                                    alt={creator.name}
+                                                    width={100}
+                                                    height={100}
+                                                    className="rounded-full mb-4 border-2 border-[#1E1E3A] h-32 w-32 object-cover absolute"
+                                                />
+                                            </div>
+                                            <h3 className="text-lg font-semibold">{creator.name}</h3>
+                                            <p className="text-[#00C4F5] text-sm mb-4">{creator.role}</p>
+
+                                            <Button
+                                                className="rounded-xl bg-gradient-to-r from-pink-600 to-blue-800 px-5 py-2 text-white font-medium"
+                                                variant="ghost"
+                                            >
+                                                <UserPlus /> Follow
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
 
                     {/* ===== Poll Card ===== */}

@@ -8,9 +8,9 @@ const Footer = () => {
             {/* footer */}
             <footer className='bg-black'>
                 <div className='relative md:mt-20 mt-16'>
-                    <Image src={"./home/footer-color.svg"} height={200} width={200} alt='Whuups' className='w-full h-full absolute z-10 md:block hidden' />
-                    <Image src={"./home/footer-black.svg"} height={200} width={200} alt='Whuups' className='w-full h-full -translate-y-8 md:block hidden' />
-                    <div className='md:absolute top-1/2 left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 text-center w-full z-20'>
+                    <Image src={"./home/footer-color.svg"} height={200} width={200} alt='Whuups' className='w-full inset-0 absolute z-10 md:block hidden' />
+                    <Image src={"./home/footer-black.svg"} height={200} width={200} alt='Whuups' className='w-full inset-0 -translate-y-8 md:block hidden' />
+                    <div className='md:absolute top-1/2 left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 text-center w-full z-20 bg-gradient-to-r'>
                         <div className='flex flex-col items-center justify-center'>
                             <Image src={"./home/footer-logo.svg"} height={200} width={200} alt='Whuups' className='md:w-40 h-32 w-28' />
                             <nav>
