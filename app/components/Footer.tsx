@@ -25,18 +25,18 @@ const Footer = () => {
                                 </ul>
                             </nav>
                             <div className='flex gap-6 pt-6'>
-                                <div className='border p-2 rounded-full border-[#C400F5] shadow-md shadow-[#6C90FF]'>
+                                <Link href={'https://www.facebook.com/Whuupsapp'} className='border p-2 rounded-full border-[#C400F5] shadow-md shadow-[#6C90FF]'>
                                     <Image src={"./home/fb.svg"} height={26} width={26} alt='fb' />
-                                </div>
-                                <div className='border p-2 rounded-full border-[#C400F5] shadow-md shadow-[#6C90FF]'>
-                                    <Image src={"./home/insta.svg"} height={26} width={26} alt='fb' />
-                                </div>
-                                <div className='border p-2 rounded-full border-[#C400F5] shadow-md shadow-[#6C90FF]'>
-                                    <Image src={"./home/linkedin.svg"} height={26} width={26} alt='fb' />
-                                </div>
-                                <div className='border p-2 rounded-full border-[#C400F5] shadow-md shadow-[#6C90FF]'>
+                                </Link>
+                                <Link href={'https://www.instagram.com/whuups_sports'} className='border p-2 rounded-full border-[#C400F5] shadow-md shadow-[#6C90FF]'>
+                                    <Image src={"./home/insta.svg"} height={26} width={26} alt='insta' />
+                                </Link>
+                                <Link href={'https://www.linkedin.com/company/whuups/'} className='border p-2 rounded-full border-[#C400F5] shadow-md shadow-[#6C90FF]'>
+                                    <Image src={"./home/linkedin.svg"} height={26} width={26} alt='linkedin' />
+                                </Link>
+                                <Link href={'/'} className='border p-2 rounded-full border-[#C400F5] shadow-md shadow-[#6C90FF]'>
                                     <Image src={"./home/yt.svg"} height={26} width={26} alt='fb' />
-                                </div>
+                                </Link>
                             </div>
                         </div>
                         <p className=' pt-10 pb-2 text-center w-full z-20 text-white md:text-base text-xs'>&copy; Whuups Inc 2025. All rights reserved.</p>
