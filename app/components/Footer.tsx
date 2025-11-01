@@ -19,7 +19,7 @@ const Footer = () => {
                                 <ul className='flex md:gap-16 gap-3 text-white font-bold text-sm md:text-lg'>
                                     <Link href={'/'} className='active text-[#C400F5]'>About</Link>
                                     <Link href={'/'}>Career</Link>
-                                    <Link href={'/'}>Terms</Link>
+                                    <Link href={'/terms-and-conditions'}>Terms</Link>
                                     <Link href={'/'}>Privacy</Link>
                                     <Link href={'/'}>Support</Link>
                                 </ul>
