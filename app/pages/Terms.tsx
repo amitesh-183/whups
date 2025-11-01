@@ -3,7 +3,7 @@ import React from 'react'
 const Terms = () => {
     return (
         <>
-            <div className='max-w-4xl mx-auto py-20'>
+            <div className='max-w-4xl mx-auto py-20 md:px-0 px-4'>
                 <h3 className='text-3xl font-bold'>Terms and Conditions</h3>
                 <p className='py-4'>Thank you for becoming a Whuupser by using our services available within Whuups!</p>
                 <p className='py-4'>We will refer to all such services, including additional apps published by Whuups Inc., and also third-party services that are powered by Whuups Inc., as the “Services”.</p>
